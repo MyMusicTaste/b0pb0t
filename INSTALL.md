@@ -35,11 +35,11 @@ Finally, pre-populate two of the tables using functions in the ```debutTest.py``
 
 You will need to create and configure the following 5 Lambda functions:
     
-1. ```slack_event_receiver``` (use 5 second timeout)
-2. ```slack_event_handler``` (use 5 minute timeout)
-3. ```slack_im_receiver``` (use 5 second timeout)
-4. ```slack_oauth``` (use 1 minute timeout)
-5. ```slack_poll_timer``` (use 3 minute timeout)
+1. ```slack_event_receiver``` (use 5 second timeout, configuration - Handler: event_receiver.lambda_handler)
+2. ```slack_event_handler``` (use 5 minute timeout, configuration - Handler: event_handler.lambda_handler)
+3. ```slack_im_receiver``` (use 5 second timeout, configuration - Handler: im_receiver.lambda_handler)
+4. ```slack_oauth``` (use 1 minute timeout, configuration - Handler: oauth.lambda_handler)
+5. ```slack_poll_timer``` (use 3 minute timeout, configuration - Handler: poll_timer.lambda_handler)
 
 ### Create AWS APIGateway and add 1 endpoint per Lambda function
 
@@ -94,6 +94,7 @@ You will need to create a Slack application for your bot. Creation/configuration
     d. Interactive Messages menu - configure the request url to point to the endpoint of ```slack_im_receiver``` Lambda above
     e. Event Subscriptions menu - enable events for your app, configure the request url to point to the endpoint of ```slack_event_receiver``` above, and add two bot events: ```message.im``` and ```team_join```
 4. You will also need to update your Slack team settings to allow everyone except guests to archive channels. You can find this setting in ```Permissions -> Channel Management```
+5. You then need to edit ```conf.py``` and add your Slack client id and secret to this file. Placement should be obvious.
 
 ### Setup AWS SNS and connect Lambda to the Slack application
 
@@ -102,6 +103,8 @@ You will need to create 3 SNS topics:
 1. ```slack_event``` - adds a Lambda subscription to the ```slack_event_handler``` Lambda function above
 2. ```slack_IM``` - adds a Lambda subscription to the ```slack_im_receiver``` Lambda function above
 3. ```slack_timer``` - adds a Lambda subscription to the ```slack_poll_timer``` Lambda function above
+
+You then need to edit ```conf.py``` and add your SNS topic names. Placement should be obvious.
         
 ### Bonus: Install a custom emoji for your Bopbot
 
