@@ -1,4 +1,6 @@
-# Bopbot
+![Friendly Neighborhood Logo](img/bopbot_thumbnail.png)
+
+# Bopbot 
 
 Making mealtime awesome.
 
@@ -16,6 +18,8 @@ Introducing Bopbot (named for 밥, the Korean word for ‘rice’ and/or ‘meal
 
 Bopbot. Making mealtime awesome.
 
+![Fancy GIFs](img/emoji.gif) 
+
 ## What's Behind The Curtain?
 
 The current implementation of B0pb0t is a sturdy balance of Amazon Web Services -- Lambda, DynamoDB, and SNS. Our server-less architecture sits behind the Slack API and makes friendly requests to the Yelp API as needed.
@@ -27,4 +31,3 @@ The cheerful and friendly UI/UX is a mix of Queen Bee's creative design resource
 This project was conducted by a spirited task force of the MyMusicTaste Development Division. The server-less wizard Kokonak designed, built, tested, and deployed most of the architecture, with some help from Pwalle and Nujabes. Queen Bee was the team's Right Brain, crafting up the UI/UX with some ```[mostly unnecessary]``` suggestions from the others. Nujabes spearheaded and managed the effort like Gordon Ramses, and Pwalle was given sovereign right over the copywriting.
 
 We would like to proudly recognize the work accomplished during the _short five weeks_ allotted for this project, and pour libations to the challenges and lessons along the way.  **TODO**
-
