@@ -24,10 +24,24 @@ Bopbot. Making mealtime awesome.
 
 The current implementation of B0pb0t is a sturdy balance of Amazon Web Services -- Lambda, DynamoDB, and SNS. Our server-less architecture sits behind the Slack API and makes friendly requests to the Yelp API as needed.
 
-The cheerful and friendly UI/UX is a mix of Queen Bee's creative design resources, and the dynamic fusion of the team's combined wit, pluck, and love (with sprinkles on top).
+The cheerful and friendly UI/UX is a mix of Queen Bee's creative design resources, and the dynamic fusion of the team's combined wit, candor, and love (with sprinkles on top).
 
 ## Flashbacks, Finger Snaps, and the Future 
 
 This project was conducted by a spirited task force of the MyMusicTaste Development Division. The server-less wizard Kokonak designed, built, tested, and deployed most of the architecture, with some help from Pwalle and Nujabes. Queen Bee was the team's Right Brain, crafting up the UI/UX with some ```[mostly unnecessary]``` suggestions from the others. Nujabes spearheaded and managed the effort like Gordon Ramses, and Pwalle was given sovereign right over the copywriting.
 
-We would like to proudly recognize the work accomplished during the _short five weeks_ allotted for this project, and pour libations to the challenges and lessons along the way.  **TODO**
+We would like to proudly recognize the work accomplished during the _short five weeks_ allotted for this project, and pour libations to the challenges and lessons along the way. 
+ 
+Tasty kudos go to Kokonak, who bravely forged his way through a first-time tango with AWS Lambda, DynamoDB, and SNS.
+ **TODO** (lambda  being stateless, need seprate server to process something esoteric)
+
+
+
+The future is bright for our plucky Bopbot. Here's the shortlist:
+
+* We plan to leverage AWS CloudFormation to allow brainless installation and enable us to upload to the Slack application directory.
+* Once gilded with the architectural final touches, we will open source Bopbot and share it with the development community (생활코딩) here in Korea. Korea largely lacks a unified, reliable, and updated restaurant location service, but Bopbot could fill that gap with data contributions from ever-hungry development teams.
+* We love the friendly face of Bopbot, but we hope to harness some machines to make her even more human! The MyMusicTaste data team is currently building a data warehouse and modeling infrastructure using AWS Redshift, EC2, SQS, and other resources. We will use this infrastructure in conjunction with natural language processing to smooth conversation with Bopbot, and build predictive models from historical choice data to improve her suggestions.
+* As always, there is a long list of gold plating for the UI/UX. Minimally, we'd like to fix a Slack feature with reminders that auto-magikally pushes past times to the next day, and use [this service](https://github.com/smashwilson/slack-emojinator) to auto-install our custom emoji on users' Slack.
+
+![TLDR](img/tldr.gif)
