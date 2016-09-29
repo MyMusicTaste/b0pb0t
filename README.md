@@ -41,7 +41,7 @@ The future is bright for our plucky Bopbot. Here's the shortlist:
 
 * We plan to leverage AWS CloudFormation to allow brainless installation and enable us to upload to the Slack application directory.
 * Once gilded with the architectural final touches, we will open source Bopbot and share it with the development community (생활코딩) here in Korea. Korea largely lacks a unified, reliable, and updated restaurant location service, but Bopbot could fill that gap with data contributions from ever-hungry development teams.
-* We love the friendly face of Bopbot, but we hope to harness some machines to make her even more human! The MyMusicTaste data team is currently building a data warehouse and modeling infrastructure using AWS Redshift, EC2, SQS, and other resources. We will use this infrastructure in conjunction with natural language processing to smooth conversation with Bopbot, and build predictive models from historical choice data to improve her suggestions.
+* We love the friendly face of Bopbot, but we hope to harness some machines to make her even more human! The MyMusicTaste data team is currently building a data warehouse and modeling infrastructure using AWS Redshift, EC2, SQS, and other resources. We will use this infrastructure in conjunction with natural language processing to smooth conversation with Bopbot, and build predictive models from usage data to improve her suggestions.
 * As always, there is a long list of gold plating for the UI/UX. Minimally, we'd like to fix a Slack feature with reminders that auto-magikally pushes past times to the next day, and use [this service](https://github.com/smashwilson/slack-emojinator) to auto-install our custom emoji on users' Slack.
 
 ![TLDR](img/tldr.gif)
