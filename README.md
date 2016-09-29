@@ -2,7 +2,7 @@
 
 # Bopbot 
 
-Making mealtime awesome. Check out [the running application](https://slack.com/oauth/authorize?scope=bot,channels:write,im:write,im:history,reminders:write&state=install&client_id=70107175334.85498289508) or look at the [installation instructions](/b0pb0t/INSTALL.md).
+Making mealtime awesome. Check out [the running application](https://slack.com/oauth/authorize?scope=bot,channels:write,im:write,im:history,reminders:write&state=install&client_id=70107175334.85498289508) or look at the [installation instructions](INSTALL.md).
 
 ## It began with a rumbling belly...
 
