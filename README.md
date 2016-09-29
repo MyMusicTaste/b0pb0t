@@ -2,7 +2,7 @@
 
 # Bopbot 
 
-Making mealtime awesome.
+Making mealtime awesome. Check out [the running application](https://slack.com/oauth/authorize?scope=bot,channels:write,im:write,im:history,reminders:write&state=install&client_id=70107175334.85498289508) or look at the [installation instructions](/b0pb0t/INSTALL.md).
 
 ## It began with a rumbling belly...
 
@@ -22,7 +22,7 @@ Bopbot. Making mealtime awesome.
 
 ## What's Behind The Curtain?
 
-The current implementation of B0pb0t is a sturdy balance of Amazon Web Services -- Lambda, DynamoDB, and SNS. Our server-less architecture sits behind the Slack API and makes friendly requests to the Yelp API as needed.
+The current implementation of B0pb0t is a sturdy balance of Amazon Web Services -- Lambda, APIGateway, DynamoDB, and SNS. Our server-less architecture sits behind the Slack API and makes friendly requests to the Yelp API as needed.
 
 The cheerful and friendly UI/UX is a mix of Queen Bee's creative design resources, and the dynamic fusion of the team's combined wit, candor, and love (with sprinkles on top).
 
@@ -32,10 +32,9 @@ This project was conducted by a spirited task force of the MyMusicTaste Developm
 
 We would like to proudly recognize the work accomplished during the _short five weeks_ allotted for this project, and pour libations to the challenges and lessons along the way. 
  
-Tasty kudos go to Kokonak, who bravely forged his way through a first-time tango with AWS Lambda, DynamoDB, and SNS.
- **TODO** (lambda  being stateless, need seprate server to process something esoteric)
+Tasty kudos go to Kokonak, who bravely forged his way through a first-time tango with AWS Lambda, DynamoDB, APIGateway and SNS. The architectural obstacles were many.. especially Slack API's required 3 second maximum response time and the statelessness of Lambda. He trounced these issues with a clever pairing with DynamoDB and SNS, making the resulting system not only robust, but also scalable.
 
-
+We thank the rest of the intrepid team as well, for supporting Kokonak on his mission. Lastly, we thank Amazon and especially Amazon Web Services for providing the necessary infrastructure for this project and many others, of course not just our own (TLDR: shut up and take our money).
 
 The future is bright for our plucky Bopbot. Here's the shortlist:
 
@@ -43,5 +42,3 @@ The future is bright for our plucky Bopbot. Here's the shortlist:
 * Once gilded with the architectural final touches, we will open source Bopbot and share it with the development community (생활코딩) here in Korea. Korea largely lacks a unified, reliable, and updated restaurant location service, but Bopbot could fill that gap with data contributions from ever-hungry development teams.
 * We love the friendly face of Bopbot, but we hope to harness some machines to make her even more human! The MyMusicTaste data team is currently building a data warehouse and modeling infrastructure using AWS Redshift, EC2, SQS, and other resources. We will use this infrastructure in conjunction with natural language processing to smooth conversation with Bopbot, and build predictive models from usage data to improve her suggestions.
 * As always, there is a long list of gold plating for the UI/UX. Minimally, we'd like to fix a Slack feature with reminders that auto-magikally pushes past times to the next day, and use [this service](https://github.com/smashwilson/slack-emojinator) to auto-install our custom emoji on users' Slack.
-
-![TLDR](img/tldr.gif)
