@@ -1,0 +1,180 @@
+[
+  {
+    "Location": "tutorial_default_location",
+    "Yelp_id": "tutorial_Porto's Bakery & Cafe  Claimed",
+    "name": "Porto's Bakery & Cafe  Claimed",
+    "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/SImiaXeexW0bh1cuLHammQ/ls.jpg",
+    "categories": [
+      {
+        "alias": "Bakeries",
+        "name": "Bakeries"
+      },
+      {
+        "alias": "Cuban",
+        "name": "Cuban"
+      },
+      {
+        "alias": "Cafes",
+        "name": "Cafes"
+      }
+    ],
+    "url": "https://www.yelp.com/biz/portos-bakery-and-cafe-burbank"
+  },
+  {
+    "Location": "tutorial_default_location",
+    "Yelp_id": "tutorial_Cheese Board Pizza",
+    "name": "Cheese Board Pizza",
+    "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/UPF6ZVXgyeR63oycPnAh_A/ls.jpg",
+    "categories": [
+      {
+        "alias": "Pizza",
+        "name": "Pizza"
+      },
+      {
+        "alias": "Board Pizza",
+        "name": "Board Pizza"
+      }
+    ],
+    "url": "https://www.yelp.com/biz/cheese-board-pizza-berkeley"
+  },
+  {
+    "Location": "tutorial_default_location",
+    "Yelp_id": "tutorial_Paseo Caribbean Food - Fremont",
+    "name": "Paseo Caribbean Food - Fremont",
+    "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/6ssQE3h5PcGOcwKiguM4Qg/ls.jpg",
+    "categories": [
+      {
+        "alias": "Caribbean",
+        "name": "Caribbean"
+      },
+      {
+        "alias": "Cuban",
+        "name": "Cuban"
+      },
+      {
+        "alias": "Sandwiches",
+        "name": "Sandwiches"
+      }
+    ],
+    "url": "http://www.yelp.com/biz/paseo-seattle-3"
+  },
+  {
+    "Location": "tutorial_default_location",
+    "Yelp_id": "tutorial_Joe's Kansas City BBQ",
+    "name": "Joe's Kansas City BBQ",
+    "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/-cuxLpd6U2S1RMt8fdJasQ/ls.jpg",
+    "categories": [
+      {
+        "alias": "Barbeque",
+        "name": "Barbeque"
+      }
+    ],
+    "url": "https://www.yelp.com/biz/joes-kansas-city-bbq-kansas-city-2"
+  },
+  {
+    "Location": "tutorial_default_location",
+    "Yelp_id": "tutorial_Citywok",
+    "name": "Citywok",
+    "image_url": "http://vignette1.wikia.nocookie.net/southpark/images/b/bf/ChildAbductionIsNotFunny04.jpg/revision/latest?cb=20100414174909",
+    "categories": [
+      {
+        "alias": "Chinese",
+        "name": "Chinese"
+      },
+      {
+        "alias": "Sushi",
+        "name": "Sushi"
+      }
+    ],
+    "url": "http://southpark.wikia.com/wiki/City_Wok"
+  },
+  {
+    "Location": "tutorial_default_location",
+    "Yelp_id": "tutorial_TKB Bakery & Deli",
+    "name": "TKB Bakery & Deli",
+    "image_url": "https://s3-media3.fl.yelpcdn.com/bphoto/Ebi_a9cMAzoGHmOUGsu9wA/ls.jpg",
+    "categories": [
+      {
+        "alias": "Delis",
+        "name": "Delis"
+      },
+      {
+        "alias": "Bakeries",
+        "name": "Bakeries"
+      },
+      {
+        "alias": "Sandwiches",
+        "name": "Sandwiches"
+      }
+    ],
+    "url": "https://www.yelp.com/biz/tkb-bakery-and-deli-indio-2"
+  },
+  {
+    "Location": "tutorial_default_location",
+    "Yelp_id": "tutorial_The Morrison",
+    "name": "The Morrison",
+    "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/f2-73P95gY0pAVQWP6zh_w/ls.jpg",
+    "categories": [
+      {
+        "alias": "Gastropubs",
+        "name": "Gastropubs"
+      },
+      {
+        "alias": "Burgers",
+        "name": "Burgers"
+      },
+      {
+        "alias": "Bars",
+        "name": "Bars"
+      }
+    ],
+    "url": "https://www.yelp.com/biz/the-morrison-los-angeles"
+  },
+  {
+    "Location": "tutorial_default_location",
+    "Yelp_id": "tutorial_Gary Danko",
+    "name": "Gary Danko",
+    "image_url": "https://s3-media2.fl.yelpcdn.com/bphoto/MWMKouFOmJk3DX6pIuWUwQ/ls.jpg",
+    "categories": [
+      {
+        "alias": "American (New)",
+        "name": "American (New)"
+      }
+    ],
+    "url": "https://www.yelp.com/biz/gary-danko-san-francisco"
+  },
+  {
+    "Location": "tutorial_default_location",
+    "Yelp_id": "tutorial_Mama D's Italian Kitchen",
+    "name": "Mama D's Italian Kitchen",
+    "image_url": "https://s3-media4.fl.yelpcdn.com/bphoto/dP4PfWCIT5CRULelpHas0g/ls.jpg",
+    "categories": [
+      {
+        "alias": "Italian",
+        "name": "Italian"
+      }
+    ],
+    "url": "https://www.yelp.com/biz/mama-ds-italian-kitchen-newport-beach"
+  },
+  {
+    "Location": "tutorial_default_location",
+    "Yelp_id": "tutorial_McDonald",
+    "name": "McDonald",
+    "image_url": "http://media.salon.com/2015/04/mcdonalds-turnaround-ideas.jpeg-1280x960.jpg",
+    "categories": [
+      {
+        "alias": "yes, we, love",
+        "name": "yes, we, love"
+      },
+      {
+        "alias": "mcD, avoid, french",
+        "name": "mcD, avoid, french"
+      },
+      {
+        "alias": "fries, and, mcf",
+        "name": "fries, and, mcf"
+      }
+    ],
+    "url": "https://www.mcdonalds.com/"
+  }
+]

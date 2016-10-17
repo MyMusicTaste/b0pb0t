@@ -1,227 +1,126 @@
 # -*- coding: utf8 -*-
-import urllib2
-import urllib
-from multiprocessing.dummy import Pool
 import json
-from boto3.dynamodb.conditions import Key
-from random import randint
 import conf
-
-
-def multi_run_wrapper(args):
-    return send_request(*args)
-
-
-def send_request(url, parameter):
-    try:
-        data = urllib.urlencode(parameter, doseq=True)
-
-        req = urllib2.Request(url, data)
-        response = urllib2.urlopen(req).read()
-        return response
-    except Exception, e:
-        print e
-        raise Exception('Bad Request: %s' % e)
-
-
-def get_phrase(key):
-    phrases_table = conf.aws_dynamo_db.Table(conf.BOT_PHRASES)
-    items = phrases_table.query(KeyConditionExpression=Key('Key').eq(key))['Items']
-    if len(items) > 1:
-        index = randint(0, len(items)-1)
-        return items[index]['Phrase']
-    else:
-        phrase = items[0]['Phrase']
-    return phrase
+import bopbot_util
+import bopbot_tutorial
+from database_manager import BopBotDatabase
 
 
 def lambda_handler(event, context):
     print event
-    try:
-        query_string = event['params']['querystring']
+    query_string = event['params']['querystring']
 
-        code = query_string['code']
-        state = query_string['state']
-    except KeyError, e:
-        print e
-        raise Exception("Bad Request: Key error \"code\"")
-    except Exception, e:
-        print e
-        raise Exception("Bad Request: %s" % e)
+    code = query_string['code']
+    state = query_string['state']
 
     payload = {'client_id': conf.CLIENT_ID, 'client_secret': conf.CLIENT_SECRET, 'code': code}
-    response = send_request(url=conf.OAUTH_ACCESS, parameter=payload)
+    response = bopbot_util.send_request_to_slack(url=conf.OAUTH_ACCESS, parameter=payload)
     print response
+
+    if not response:
+        print 'send request failed'
+        raise Exception("Bad Request")
 
     if type(response) == str:
         response = json.loads(response)
 
     try:
         access_token = response['access_token']
-
         team_id = response['team_id']
+        team_name = response['team_name']
         user_id = response['user_id']
         bot_dict = response['bot']
         bot_id = bot_dict['bot_user_id']
         bot_token = bot_dict['bot_access_token']
-
-        team_table = conf.aws_dynamo_db.Table(conf.SLACK_TEAM_TABLE)
-        team_table.put_item(Item={'Team_id': team_id, 'User_id': 'Team', 'Bot_access_token': bot_token, 'Bot_user_id': bot_id})
-        team_table.put_item(Item={'Team_id': team_id, 'User_id': user_id, 'Access_token': access_token})
-
-        if state == 'tutorial':
-            user_table = conf.aws_dynamo_db.Table(conf.USER_STATUS_TABLE)
-            response = user_table.get_item(Key={'User_id': user_id})
-            print response
-
-            payload = {'token': bot_token, 'channel': user_id, 'as_user': 'true'}
-
-            if 'Item' in response:
-                item = response['Item']
-                if 'Status' in item and item['Status'] == 'tutorial':
-                    payload.update(make_tutorial_more_option_list())
-                    send_request(conf.CHAT_POST_MESSAGE, payload)
-        elif state == 'install':
-            response = send_start_demo_message(user_id, bot_token)
-            print 'app install %s' % response
-        else:
-            payload = {
-                'token': bot_token,
-                'channel': user_id,
-                'as_user': 'true',
-                'text': 'Thanks! Let\'s find a good restaurant!'
-            }
-            send_request(conf.CHAT_POST_MESSAGE, payload)
-
-            payload = {
-                'team_id': team_id,
-                'event': {
-                    'channel': user_id,
-                    'user': user_id,
-                    'ts': state,
-                    'text': 'what to eat'
-                }
-            }
-
-            conf.aws_sns.publish(
-                TopicArn=conf.aws_sns_event_arn,
-                Message=json.dumps({'default': json.dumps(payload)}),
-                MessageStructure='json'
-            )
-
-        return 'Success'
-
     except KeyError, e:
         print e
+        print 'Response: %s' % response
         raise Exception("Bad Request: %s" % e)
     except Exception, e:
         print e
+        print 'Response: %s' % response
         raise Exception("Bad Request: %s" % e)
 
+    team_table = BopBotDatabase(table=conf.SLACK_TEAM_TABLE)
+    team_table.put_item_to_table(item={'Team_id': team_id, 'User_id': 'Team', 'Team_name': team_name, 'Bot_access_token': bot_token, 'Bot_user_id': bot_id})
+    team_table.put_item_to_table(item={'Team_id': team_id, 'User_id': user_id, 'Access_token': access_token})
 
-def im_open(members, bot_token):
-    params = list()
-    for member in members:
-        url = 'https://slack.com/api/im.open'
-        payload = {'token': bot_token, 'user': member}
-        param = (url, payload)
-        params.append(param)
+    if state == 'tutorial':
+        user_table = conf.aws_dynamo_db.Table(conf.USER_STATUS_TABLE)
+        response = user_table.get_item(Key={'User_id': user_id})
+        print response
 
-    pool = Pool(4)
-    results = pool.map(multi_run_wrapper, params)
-    print results
-    return results
+        if 'Item' in response:
+            item = response['Item']
+            if 'Status' in item and item['Status'] == 'tutorial':
+                bopbot_tutorial.clicked_simple_demo_start(team_id=team_id, user_id=user_id, bot_token=bot_token)
 
+    elif state == 'install':
+        install_im_open(bot_token=bot_token)
+        response = bopbot_tutorial.send_start_demo_message(user_id=user_id, bot_token=bot_token)
+        print 'app install %s' % response
 
-def send_start_demo_message(user_id, bot_token):
-    user_table = conf.aws_dynamo_db.Table(conf.USER_STATUS_TABLE)
-    user_table.put_item(Item={'User_id': user_id, 'Status': 'tutorial'})
+    else:
+        phrase = bopbot_util.get_phrase('main_auth_success')
+        payload = bopbot_util.get_dict_for_slack_post_request(token=bot_token, channel=user_id, text=phrase)
+        bopbot_util.send_request_to_slack(url=conf.CHAT_POST_MESSAGE, parameter=payload)
 
-    attachment = [
-        {
-            'text': '#%s' % 'Simple demo',
-            'color': '#3aa3e3',
-            'attachment_type': 'default',
-            'fallback': "simple_demo_start",
-            'callback_id': "simple_demo_start",
-            'actions': [
-                {
-                    'name': 'simple demo',
-                    'text': 'simple demo',
-                    'type': 'button',
-                    'value': 'simple demo'
-                }
-            ]
+        payload = {
+            'team_id': team_id,
+            'event': {
+                'channel': user_id,
+                'user': user_id,
+                'ts': state,
+                'text': 'what to eat'
+            }
         }
-    ]
-    attachment = json.dumps(attachment)
 
-    phrase = get_phrase('tutorial_1')
+        conf.aws_sns.publish(
+            TopicArn=conf.aws_sns_event_arn,
+            Message=json.dumps({'default': json.dumps(payload)}),
+            MessageStructure='json'
+        )
 
-    payload = {
-        'channel': user_id,
-        'token': bot_token,
-        'text': phrase,
-        'attachments': attachment,
-        'as_user': 'true'
-    }
-
-    results = send_request(conf.CHAT_POST_MESSAGE, payload)
-    return results
+    return 'Success'
 
 
-def make_tutorial_more_option_list():
-    menu_table = conf.aws_dynamo_db.Table(conf.RESTAURANT_TABLE)
-    response = menu_table.query(
-        KeyConditionExpression=Key('Location').eq(conf.TUTORIAL_DEFAULT_RESTAURANT_LOCATION)
-    )
-    items = response['Items']
+def install_im_open(bot_token):
+    payload = {'token': bot_token, 'exclude_archived': 1}
+    url = 'https://slack.com/api/channels.list'
 
-    menu_list = items[0:5]
-    attachments = list()
-    print
-    for restaurant in menu_list:
-        categories = restaurant['categories']
-        categories_text = str()
-        for index, category in enumerate(categories):
-            if index < 3:
-                if index == 0:
-                    categories_text += category['name'].encode('utf8')
-                else:
-                    categories_text += ', ' + category['name'].encode('utf8')
+    response = bopbot_util.send_request_to_slack(url=url, parameter=payload)
+    if not response:
+        print 'Get slack channel list failed'
+        return
 
-        attachment = {
-            'title': restaurant['name'].encode('utf8'),
-            'title_link': restaurant['url'].encode('utf8'),
-            'text': categories_text,
-            'thumb_url': restaurant['image_url'].encode('utf8'),
-            'color': '#3aa3e3'
-        }
-        attachments.append(attachment)
+    # response = json.loads(response)
 
-    action = {
-        'name': 'More options',
-        'text': 'More options',
-        'type': 'button',
-        'value': 'More options'
-    }
+    try:
+        channels = response['channels']
+        for channel in channels:
+            if channel['is_general']:
+                channel_id = channel['id']
+                url = 'https://slack.com/api/channels.info'
+                payload = {'token': bot_token, 'channel': channel_id}
+                response = bopbot_util.send_request_to_slack(url=url, parameter=payload)
 
-    phrase = get_phrase('tutorial_3')
-    button_attachment = {
-        'text': phrase,
-        'color': '#3aa3e3',
-        'attachment_type': 'default',
-        'fallback': "simple_demo_more_options",
-        'callback_id': "simple_demo_more_options",
-        'actions': [action]
-    }
-    attachments.append(button_attachment)
+                if not response:
+                    return
 
-    attachments = json.dumps(attachments)
+                # response = json.loads(response)
 
-    payload = {
-        'text': 'Thanks! Let\'s see how it works!',
-        'attachments': attachments
-    }
-    return payload
+                channel = response['channel']
+                members = channel['members']
 
+                params = []
+                url = 'https://slack.com/api/im.open'
+                for member in members:
+                    payload = {'token': bot_token, 'user': member}
+                    param = (url, payload)
+                    params.append(param)
+
+                return bopbot_util.send_request_with_multiprocessing_pool(4, params)
+    except Exception, e:
+        print 'IM open failed %s' % e
+
+    return

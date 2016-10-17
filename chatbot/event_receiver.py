@@ -4,6 +4,8 @@ import conf
 
 
 def lambda_handler(event, context):
+    print event
+
     eq_body = event['body']
     if 'type' in eq_body:
         if eq_body['type'] == 'url_verification':
@@ -13,6 +15,9 @@ def lambda_handler(event, context):
     print eq_body
 
     try:
+        if eq_body['token'] != conf.VERIFY_TOKEN:
+            return
+
         payload = eq_body
         response = conf.aws_sns.publish(
             TopicArn=conf.aws_sns_event_arn,
@@ -24,3 +29,4 @@ def lambda_handler(event, context):
         return {}
     except:
         raise Exception("Bad Request: request failed")
+

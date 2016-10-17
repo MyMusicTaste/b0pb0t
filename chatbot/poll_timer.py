@@ -6,29 +6,8 @@ from boto3.dynamodb.conditions import Key, Attr
 import time
 from random import randint
 import conf
-
-
-def send_request(url, parameter):
-    try:
-        data = urllib.urlencode(parameter, doseq=True)
-
-        req = urllib2.Request(url, data)
-        response = urllib2.urlopen(req).read()
-        return response
-    except Exception, e:
-        print e
-        raise Exception('Bad Request: %s' % e)
-
-
-def get_phrase(key):
-    phrases_table = conf.aws_dynamo_db.Table(conf.BOT_PHRASES)
-    items = phrases_table.query(KeyConditionExpression=Key('Key').eq(key))['Items']
-    if len(items) > 1:
-        index = randint(0, len(items)-1)
-        return items[index]['Phrase'].encode('utf8')
-    else:
-        phrase = items[0]['Phrase'].encode('utf8')
-    return phrase
+import bopbot_util
+from database_manager import BopBotDatabase
 
 
 def lambda_handler(event, context):
@@ -48,7 +27,7 @@ def lambda_handler(event, context):
 
     remain_time = int(message['time'])
     response = message['response']
-    response = json.loads(response)
+    # response = json.loads(response)
     message_ts = response['message']['ts']
     channel_id = message['channel']
     channel_name = message['channel_name']
@@ -73,9 +52,9 @@ def lambda_handler(event, context):
             'as_user': 'false',
             'text': text
         }
-        send_request(conf.CHAT_POST_MESSAGE, payload)
 
-        response = json.dumps(response)
+        bopbot_util.send_request_to_slack(url=conf.CHAT_POST_MESSAGE, parameter=payload)
+
         payload = {
             'time': new_time,
             'response': response,
@@ -109,7 +88,7 @@ def complete_poll_event(response, message_ts, channel_id, channel_name, bot_toke
         'text': response['message']['text'],
         'attachments': update_attachments
     }
-    send_request('https://slack.com/api/chat.update', payload)
+    bopbot_util.send_request_to_slack(url='https://slack.com/api/chat.update', parameter=payload)
 
     button_actions = attachments[len(attachments) - 1]['actions']
 
@@ -122,14 +101,14 @@ def complete_poll_event(response, message_ts, channel_id, channel_name, bot_toke
     vote_result_attachments = json.dumps(vote_result_attachments)
 
     payload = {"token": str(bot_token), "channel": channel_id, "as_user": "false", 'text': 'Result', 'attachments': vote_result_attachments}
-    print send_request(conf.CHAT_POST_MESSAGE, payload)
+    print bopbot_util.send_request_to_slack(url=conf.CHAT_POST_MESSAGE, parameter=payload)
 
-    # 투표한 사람이 한명 이하일때 조크 메시지
+    # joke
     if len(user_id_list) == 0:
-        phrase = get_phrase('poll_joke')
+        phrase = bopbot_util.get_phrase('poll_joke')
 
         payload = {"token": str(bot_token), "channel": channel_id, "as_user": "false", 'text': phrase}
-        print send_request(conf.CHAT_POST_MESSAGE, payload)
+        print bopbot_util.send_request_to_slack(url=conf.CHAT_POST_MESSAGE, parameter=payload)
 
     else:
         index = randint(0, len(decision_list)-1)
@@ -139,10 +118,10 @@ def complete_poll_event(response, message_ts, channel_id, channel_name, bot_toke
         name = '*' + decision['Name'] + '*'
 
         if len(decision_list) > 1:
-            phrase = get_phrase('poll_tied')
+            phrase = bopbot_util.get_phrase('poll_tied')
             text = phrase % (len(decision_list), name)
         else:
-            phrase = get_phrase('poll_result')
+            phrase = bopbot_util.get_phrase('poll_result')
             text = phrase % name
         print text
 
@@ -150,69 +129,38 @@ def complete_poll_event(response, message_ts, channel_id, channel_name, bot_toke
 
         item = restaurant_table.get_item(Key={'Location': location, 'Yelp_id': yelp_id})['Item']
 
-        channel_table = conf.aws_dynamo_db.Table(conf.CHANNEL_POLL_TABLE)
-        channel_table.update_item(Key={'Channel_id': channel_id},
-                                  AttributeUpdates={'Location': {'Action': 'PUT', 'Value': item['Location'].encode('utf8')},
-                                                    'Yelp_id': {'Action': 'PUT', 'Value': item['Yelp_id'].encode('utf8')},
-                                                    'lat': {'Action': 'PUT', 'Value': item['location']['coordinate']['lat']},
-                                                    'lng': {'Action': 'PUT', 'Value': item['location']['coordinate']['lng']},
-                                                    'Message_ts': {'Action': 'PUT', 'Value': message_ts}
-                                                    }
+        channel_table = BopBotDatabase(table=conf.CHANNEL_POLL_TABLE)
+        channel_table.update_item_to_table(key={'Channel_id': channel_id},
+                                           attribute_updates={'Location': {'Action': 'PUT', 'Value': item['Location'].encode('utf8')},
+                                                              'User_id': {'Action': 'PUT', 'Value': user_id},
+                                                              'Yelp_id': {'Action': 'PUT', 'Value': item['Yelp_id'].encode('utf8')},
+                                                              'lat': {'Action': 'PUT', 'Value': item['location']['coordinate']['lat']},
+                                                              'lng': {'Action': 'PUT', 'Value': item['location']['coordinate']['lng']},
+                                                              'Message_ts': {'Action': 'PUT', 'Value': message_ts}
+                                                              }
                                   )
+        restaurant_attachment = bopbot_util.make_restaurant_list_attachments([item])
+        restaurant_attachment = json.dumps(restaurant_attachment)
 
-        categories = item['categories']
-        categories_text = str()
-        for index, category in enumerate(categories):
-            if index < 3:
-                if index == 0:
-                    categories_text += category['name'].encode('utf8')
-                else:
-                    categories_text += ', ' + category['name'].encode('utf8')
+        payload = {'token': bot_token, 'channel': channel_id, 'as_user': 'false', 'text': text, 'attachments': restaurant_attachment}
+        print bopbot_util.send_request_to_slack(url=conf.CHAT_POST_MESSAGE, parameter=payload)
 
-        result_attachment = [{
-            'title': item['name'].encode('utf8'),
-            'title_link': item['url'].encode('utf8'),
-            'text': categories_text,
-            'thumb_url': item['image_url'].encode('utf8'),
-            'color': '#3aa3e3'
-        }]
-        result_attachment = json.dumps(result_attachment)
-
-        payload = {'token': bot_token, 'channel': channel_id, 'as_user': 'false', 'text': text, 'attachments': result_attachment}
-        print send_request(conf.CHAT_POST_MESSAGE, payload)
-
-        phrase = get_phrase('reminder_1')
+        phrase = bopbot_util.get_phrase('reminder_1')
         text = phrase % name
-        payload = {"token": str(bot_token), "channel": user_id, "as_user": "true", 'text': text}
+        payload = {"token": bot_token, "channel": user_id, "as_user": "true", 'text': text}
 
         reminder_param = {'channel': channel_id, 'channel_name': channel_name, 'decision': name}
         reminder_param = json.dumps(reminder_param)
 
-        reminder_attachments = [
-            {
-                'color': '#3aa3e3',
-                'attachment_type': 'default',
-                'fallback': "reminder_menu",
-                'callback_id': "reminder_menu",
-                'actions': [
-                    {
-                        'name': 'Set reminder',
-                        'text': 'Set reminder',
-                        'type': 'button',
-                        'value': reminder_param
-                    },
-                    {
-                        'name': 'No thanks',
-                        'text': 'No thanks',
-                        'type': 'button',
-                        'value': reminder_param
-                    }
-                ]
-            }
-        ]
+        actions = []
+        for button in bopbot_util.interactive_buttons['reminder_menu']:
+            action = bopbot_util.make_im_button(name=button, text=button, value=reminder_param)
+            actions.append(action)
+
+        reminder_attachments = [bopbot_util.make_im_button_attachment(callback_id='reminder_menu', actions=actions)]
         reminder_attachments = json.dumps(reminder_attachments)
         payload.update({'attachments': reminder_attachments})
-        send_request(conf.CHAT_POST_MESSAGE, payload)
+        bopbot_util.send_request_to_slack(url=conf.CHAT_POST_MESSAGE, parameter=payload)
 
     return response
 
@@ -269,3 +217,4 @@ def get_decision_from_button_list(message_ts, button_list):
                 attachment.update({'color': '#3aa3e3'})
 
     return {'Decision': decision_list, 'Attachments': vote_result_attachments, 'Users': user_id_list}
+

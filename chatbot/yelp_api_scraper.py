@@ -1,24 +1,14 @@
 from yelp.client import Client
-from boto3.session import Session
 import time
 from decimal import Decimal
 import conf
 
-TABLE_NAME = 'Restaurant_list'
-REGION = "ap-northeast-1"
 NULL = 'NONE'
 
 yelp_client = Client(conf.auth)
 
 limit = 10
 offset = 0
-
-# params = {
-#     'term': 'restaurant',
-#     'limit': limit,
-#     'sort': 2,
-#     'offset': offset
-# }
 
 
 def fetch_restaurants(location):
@@ -57,10 +47,10 @@ def store_businesses(businesses, location):
 
 
 def __store_businesses(batch_list, backoff):
-    resp = conf.aws_dynamo_db.batch_write_item(RequestItems={TABLE_NAME: batch_list})
-    if TABLE_NAME in resp['UnprocessedItems'] and len(resp['UnprocessedItems'][TABLE_NAME]) > 0:
+    resp = conf.aws_dynamo_db.batch_write_item(RequestItems={conf.RESTAURANT_TABLE: batch_list})
+    if conf.RESTAURANT_TABLE in resp['UnprocessedItems'] and len(resp['UnprocessedItems'][conf.RESTAURANT_TABLE]) > 0:
         time.sleep(backoff)
-        __store_businesses(resp['UnprocessedItems'][TABLE_NAME], backoff * 2)
+        __store_businesses(resp['UnprocessedItems'][conf.RESTAURANT_TABLE], backoff * 2)
 
 
 def filter_closed(businesses):
