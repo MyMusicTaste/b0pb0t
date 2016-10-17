@@ -145,5 +145,14 @@
   {
     "Key": "error_3",
     "Phrase": "I'm trying to find you some nice restaurants now. if you want to start over, just send `stop`."
+  },
+  {
+    "Key": "hi",
+    "Phrase": "Hi!!!!!"
+  },
+  {
+    "Key": "hi",
+    "Phrase": "Hello world!!!"
   }
+
 ]

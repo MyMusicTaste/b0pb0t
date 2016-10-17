@@ -7,6 +7,9 @@ import sys
 import event_chat_message
 import bopbot_tutorial
 
+import urllib
+import urllib2
+
 def set_tutorial_restaurant():
     restaurant_table = conf.aws_dynamo_db.Table(conf.RESTAURANT_TABLE)
 
@@ -56,5 +59,3 @@ def set_hq_mymusictaste():
             })
             print response
 
-
-response = bopbot_tutorial.send_start_demo_message(user_id='U223H05MX', bot_token='xoxb-88145468433-VSZ1CwT21s0mGldByFsaH8D4')

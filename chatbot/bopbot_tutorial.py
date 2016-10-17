@@ -37,7 +37,7 @@ def send_start_demo_message(user_id, bot_token):
             as_user='true'
         )
     
-        return bopbot_util.send_request(conf.CHAT_POST_MESSAGE, payload)
+        return bopbot_util.send_request_to_slack(url=conf.CHAT_POST_MESSAGE, parameter=payload)
     except Exception, e:
         print e
         return 
@@ -70,7 +70,7 @@ def clicked_simple_demo_start(team_id, user_id, bot_token):
 
         payload.update({'text': phrase, 'attachments': attachments})
 
-    return bopbot_util.send_request(conf.CHAT_POST_MESSAGE, payload)
+    return bopbot_util.send_request_to_slack(url=conf.CHAT_POST_MESSAGE, parameter=payload)
 
 
 def clicked_simple_demo_more_options(user_id, bot_token):
@@ -90,7 +90,7 @@ def clicked_simple_demo_more_options(user_id, bot_token):
         is_title=False)
     )
 
-    return bopbot_util.send_request(conf.CHAT_POST_MESSAGE, payload)
+    return bopbot_util.send_request_to_slack(url=conf.CHAT_POST_MESSAGE, parameter=payload)
 
 
 def clicked_simple_demo_send_the_poll(user_id, bot_token):
@@ -112,7 +112,7 @@ def clicked_simple_demo_send_the_poll(user_id, bot_token):
     )
     payload.update({'mrkdwn': 'true'})
 
-    return bopbot_util.send_request(conf.CHAT_POST_MESSAGE, payload)
+    return bopbot_util.send_request_to_slack(url=conf.CHAT_POST_MESSAGE, parameter=payload)
 
 
 def make_tutorial_restaurant_list(callback_id, phrase_key, is_title=True):

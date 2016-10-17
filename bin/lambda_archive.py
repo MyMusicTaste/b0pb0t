@@ -88,7 +88,6 @@ def deploy_update_code_to_lambda(lambda_functions):
     :param lambda_functions: list of lambda functions name that will be updated.
     :return:
     """
-    # parent_dir = os.path.abspath(parent_file_dir(2))
     parent_dir = os.path.abspath(parent_file_dir_iter(2, os.path.dirname(__file__)))
     archive_dir = parent_dir + ARCHIVE_DIR
 
@@ -97,7 +96,6 @@ def deploy_update_code_to_lambda(lambda_functions):
     zip_name = parent_dir + DESTINATION_DIR + zip_name
 
     if create_zip(archive_dir, zip_name):
-        current_path = os.path.dirname(__file__)
         zip_path = zip_name
         for function in lambda_functions:
             print function

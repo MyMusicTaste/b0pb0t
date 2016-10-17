@@ -80,13 +80,13 @@ def im_handler(message):
 
             phrase = bopbot_util.get_phrase('reminder_add')
             payload = {'token': bot_token, 'channel': channel, 'as_user': 'true', 'text': phrase}
-            response = bopbot_util.send_request(conf.CHAT_POST_MESSAGE, payload)
+            response = bopbot_util.send_request_to_slack(url=conf.CHAT_POST_MESSAGE, parameter=payload)
             print 'reminder response %s' % response
             return response
         elif menu_name == bopbot_util.interactive_buttons[callback][1]:
             user_table.put_item_to_table(item={'User_id': user_id})
             payload = bopbot_util.make_archive_payload(bot_token=bot_token, user_id=user_id, channel=channel_id)
-            return bopbot_util.send_request(conf.CHAT_POST_MESSAGE, payload)
+            return bopbot_util.send_request_to_slack(url=conf.CHAT_POST_MESSAGE, parameter=payload)
 
     elif callback == 'archive_channel':
         if menu_name == bopbot_util.interactive_buttons[callback][0]:
@@ -99,7 +99,7 @@ def im_handler(message):
             # channel archive
             url = 'https://slack.com/api/channels.archive'
             payload = {'token': access_token, 'channel': channel_id}
-            response = bopbot_util.send_request(url, payload)
+            response = bopbot_util.send_request_to_slack(url=url, parameter=payload)
             print 'Archive request: %s' % response
             return response
         elif menu_name == 'Later':
@@ -118,7 +118,7 @@ def clicked_send_the_poll_button(bot_token, user_id):
     user_table.update_item_to_table(key={'User_id': user_id}, attribute_updates={'Status': {'Action': 'PUT', 'Value': 'wte_invitation'}})
 
     payload = bopbot_util.get_dict_for_slack_post_request(token=bot_token, channel=user_id, text=phrase)
-    return bopbot_util.send_request(conf.CHAT_POST_MESSAGE, payload)
+    return bopbot_util.send_request_to_slack(url=conf.CHAT_POST_MESSAGE, parameter=payload)
 
 
 def clicked_more_options_button(bot_token, user_id, location):

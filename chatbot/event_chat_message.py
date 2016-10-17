@@ -35,7 +35,7 @@ def send_authorization_request(channel, bot_token):
         attachments=attachments
     )
 
-    return bopbot_util.send_request(conf.CHAT_POST_MESSAGE, payload)
+    return bopbot_util.send_request_to_slack(url=conf.CHAT_POST_MESSAGE, parameter=payload)
 
 
 def send_stop_message_with_key(key, bot_token, user_id):
@@ -56,7 +56,7 @@ def send_simple_message_to_slack_with_key(key, bot_token, user_id):
         channel=user_id,
         text=phrase
     )
-    return bopbot_util.send_request(conf.CHAT_POST_MESSAGE, payload)
+    return bopbot_util.send_request_to_slack(url=conf.CHAT_POST_MESSAGE, parameter=payload)
 
 
 def team_join_event_handler(team_id, user_id):
@@ -146,6 +146,9 @@ def chat_event_handler(message):
 
     key = {'User_id': user_id}
     item = user_table.get_item_from_table(key=key)
+    if not item:
+        user_table.put_item_to_table(item={'User_id': user_id})
+        item = {"User_id": user_id}
 
     if 'Status' not in item:
         status = 'normal'
@@ -157,46 +160,38 @@ def chat_event_handler(message):
 
 
 def handler_user_command_with_status(status, user_command, bot_token, user_id, access_token):
-    try:
-        wte_status = bopbot_util.user_status
-        item = wte_status[status]
-        command_def = item['command_def']
+    wte_status = bopbot_util.user_status
+    item = wte_status[status]
+    command_def = item['command_def']
 
-        if len(filter(lambda x: x in user_command, bopbot_util.wte_commands)) > 0:
-            # what to eat command
-            user_command = 'wte'
+    # 유저의 명령어가 wte command list에 있는지 검사.
+    if len(filter(lambda x: x in user_command, bopbot_util.wte_commands)) > 0:
+        # what to eat command
+        user_command = 'wte'
 
-        if user_command in command_def:
-            item = command_def[user_command]
+    if user_command in command_def:
+        item = command_def[user_command]
+    else:
+        item = item['else']
+
+    module = item['module']
+    if len(module) == 0:
+        module = 'event_chat_message'
+    module = getattr(sys.modules[__name__], module)
+
+    function = item['function']
+    function = getattr(module, function)
+
+    parameters = item['parameters']
+    kwargs = {}
+    for param in parameters:
+        if '=' in param:
+            params = param.split('=')
+            kwargs[params[0]] = params[1]
         else:
-            # execute each function was defined.
-            item = item['else']
-        module = item['module']
-        if len(module) == 0:
-            module = 'event_chat_message'
-        module = getattr(sys.modules[__name__], module)
+            kwargs[param] = locals()[param]
 
-        function = item['function']
-        function = getattr(module, function)
-
-        parameters = item['parameters']
-        kwargs = {}
-        for param in parameters:
-            if '=' in param:
-                params = param.split('=')
-                kwargs[params[0]] = params[1]
-            else:
-                kwargs[param] = locals()[param]
-
-        return function(**kwargs)
-        # return kwargs
-
-    except KeyError, e:
-        print e
-        return
-    except Exception, e:
-        print e
-        return
+    return function(**kwargs)
 
 
 def send_wte_input_to_yelp(input):
@@ -204,9 +199,9 @@ def send_wte_input_to_yelp(input):
 
     suggestions = list()
     try:
-        response = bopbot_util.send_request(url)
-        if response['success']:
-            yelp_result = json.loads(response['result'])
+        response = bopbot_util.send_request(url=url)
+        if response:
+            yelp_result = json.loads(response)
             for suggestion in yelp_result['suggestions']:
                 suggestions.append(suggestion['name'].encode('utf8'))
 
@@ -239,7 +234,7 @@ def process_wte_location_input(bot_token, user_id, user_command):
 
         phrase += '\n\n' + bopbot_util.get_phrase('location_3')
         payload = bopbot_util.get_dict_for_slack_post_request(token=bot_token, channel=user_id, text=phrase)
-        return bopbot_util.send_request(conf.CHAT_POST_MESSAGE, payload)
+        return bopbot_util.send_request_to_slack(url=conf.CHAT_POST_MESSAGE, parameter=payload)
 
 
 def process_wte_location_choice(bot_token, user_id, user_command):
@@ -248,7 +243,7 @@ def process_wte_location_choice(bot_token, user_id, user_command):
         item = user_table.get_item_from_table(key={'User_id': user_id})
         suggestions = item['Suggestion']
 
-        if index > len(suggestions):
+        if index > len(suggestions) or index <= 0:
             return send_simple_message_to_slack_with_key(key='error_9', bot_token=bot_token, user_id=user_id)
         else:
             location = suggestions[index-1]
@@ -287,7 +282,7 @@ def send_random_restaurant_list(location, bot_token, user_id, is_yelp=False):
 
     phrase = bopbot_util.get_phrase('location_4') % location
     payload = bopbot_util.get_dict_for_slack_post_request(token=bot_token, channel=user_id, text=phrase, attachments=attachments)
-    return bopbot_util.send_request(conf.CHAT_POST_MESSAGE, payload)
+    return bopbot_util.send_request_to_slack(url=conf.CHAT_POST_MESSAGE, parameter=payload)
 
 
 def make_random_restaurant_list_with_location(location):
@@ -328,7 +323,7 @@ def process_wte_invitation(bot_token, user_id, user_command, access_token):
     if len(user_list) == 0:
         phrase = bopbot_util.get_phrase('invite_invalid_input')
         payload = {'token': bot_token, 'channel': user_id, 'as_user': 'true', 'text': phrase}
-        return bopbot_util.send_request(conf.CHAT_POST_MESSAGE, payload)
+        return bopbot_util.send_request_to_slack(url=conf.CHAT_POST_MESSAGE, parameter=payload)
     else:
         # 새로운 채널을 만들고 유저들을 초대
         if not access_token:
@@ -336,6 +331,9 @@ def process_wte_invitation(bot_token, user_id, user_command, access_token):
         else:
             print user_list
             response = send_create_channel_request(access_token)
+
+            if not response:
+                return
 
             channel_id = response['channel']['id']
             channel_name = response['channel']['name']
@@ -345,6 +343,9 @@ def process_wte_invitation(bot_token, user_id, user_command, access_token):
 
             response = send_poll_message_request(user_id, bot_token, channel_id)
             print response
+            if not response:
+                print 'send poll message failed'
+                return
 
             payload = {
                 'time': conf.VOTE_DURATION,
@@ -371,11 +372,9 @@ def send_create_channel_request(access_token):
     url = 'https://slack.com/api/channels.create'
     phrase = bopbot_util.get_phrase('channel_create')
     payload = {'token': access_token, 'name': phrase % ts}
-    response = bopbot_util.send_request(url=url, parameter=payload)
+    response = bopbot_util.send_request_to_slack(url=url, parameter=payload)
     print 'channel create request response'
     print response
-
-    response = response['result']
 
     if type(response) == str:
         response = json.loads(response)
@@ -438,7 +437,7 @@ def send_poll_message_request(user_id, bot_token, channel):
 
     phrase = bopbot_util.get_phrase('poll_vote')
     payload = bopbot_util.get_dict_for_slack_post_request(token=bot_token, channel=channel, text=phrase, attachments=attachments, as_user='false')
-    return bopbot_util.send_request(conf.CHAT_POST_MESSAGE, payload)['result']
+    return bopbot_util.send_request_to_slack(url=conf.CHAT_POST_MESSAGE, parameter=payload)
 
 
 def send_reminder_process(bot_token, user_id, user_command, access_token):
@@ -476,11 +475,13 @@ def send_reminder_process(bot_token, user_id, user_command, access_token):
     url = 'https://slack.com/api/reminders.add'
     phrase = bopbot_util.get_phrase('reminder_text')
     payload = {'token': access_token, 'time': user_command, 'user': user_id, 'text': phrase % decision}
-    response = bopbot_util.send_request(url, payload)
-    response = response['result']
-    response = json.loads(response)
+    # response = bopbot_util.send_request(url, payload)
+    # response = response['result']
 
-    if response['ok']:
+    response = bopbot_util.send_request_to_slack(url=url, parameter=payload)
+    # response = json.loads(response)
+
+    if response:
         timestamp = response['reminder']['time']
 
         try:
@@ -528,5 +529,4 @@ def send_reminder_process(bot_token, user_id, user_command, access_token):
         response = bopbot_util.send_request(conf.CHAT_POST_MESSAGE, payload)
         print 'Reminder typing: Invalid input %s' % response
         return response
-
 

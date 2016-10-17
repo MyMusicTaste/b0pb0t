@@ -217,6 +217,11 @@ user_status = {
                 'function': 'send_start_demo_message',
                 'parameters': ['user_id', 'bot_token']
             },
+            'hi': {
+                'module': '',
+                'function': 'send_simple_message_to_slack_with_key',
+                'parameters': ['key=hi', 'bot_token', 'user_id']
+            }
         },
         'else': {
             'module': '',
@@ -302,6 +307,34 @@ def get_phrase(key):
         raise Exception('Bad Request: Exception: %s' % e)
 
 
+def send_request_to_slack(url, parameter=None):
+    """
+    send request
+    :param url: url for request
+    :param parameter: parameter for request
+    :return:
+    """
+    try:
+        if parameter:
+            data = urllib.urlencode(parameter, doseq=True)
+            req = urllib2.Request(url, data)
+        else:
+            req = urllib2.Request(url)
+
+        response = urllib2.urlopen(req).read()
+        response = json.loads(response)
+        print response
+
+        if not response['ok']:
+            return False
+        else:
+            return response
+
+    except Exception, e:
+        print e
+        return False
+
+
 def send_request(url, parameter=None):
     """
     send request
@@ -318,10 +351,10 @@ def send_request(url, parameter=None):
 
         response = urllib2.urlopen(req).read()
 
-        return make_bopbot_request_result_dict(True, response)
+        return response
     except Exception, e:
         print e
-        return make_bopbot_request_result_dict(False, e)
+        return False
 
 
 def send_request_wrapper(args):
@@ -330,7 +363,7 @@ def send_request_wrapper(args):
     :param args: set of param (url, parameter)
     :return:
     """
-    return send_request(*args)
+    return send_request_to_slack(*args)
 
 
 def send_request_with_multiprocessing_pool(processes, params):
@@ -392,7 +425,7 @@ def make_restaurant_list_attachments(restaurant_list):
             'title': restaurant['name'].encode('utf8'),
             'title_link': restaurant['url'].encode('utf8'),
             'text': categories_text,
-            'thumb_url': restaurant['image_url'].encode('utf8'),
+            'thumb_url': restaurant['image_url'],
             'color': '#3aa3e3'
         }
         attachments.append(attachment)
