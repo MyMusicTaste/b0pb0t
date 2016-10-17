@@ -26,6 +26,10 @@ The current implementation of B0pb0t is a sturdy balance of Amazon Web Services 
 
 The cheerful and friendly UI/UX is a mix of Queen Bee's creative design resources, and the dynamic fusion of the team's combined wit, candor, and love (with sprinkles on top).
 
+## Architecture of the bot
+
+![Fancy GIFs](img/bopbot_structure_3.png) 
+
 ## Flashbacks, Finger Snaps, and the Future 
 
 This project was conducted by a spirited task force of the MyMusicTaste Development Division. The server-less wizard Kokonak designed, built, tested, and deployed most of the architecture, with some help from Pwalle and Nujabes. Queen Bee was the team's Right Brain, crafting up the UI/UX with some ```[mostly unnecessary]``` suggestions from the others. Nujabes spearheaded and managed the effort like Gordon Ramses, and Pwalle was given sovereign right over the copywriting.
