@@ -73,4 +73,22 @@ def set_user_command_definition():
             print response
 
 
-set_user_command_definition()
+def create_tables():
+    resource = conf.aws_dynamo_db
+    client = conf.session.client('dynamodb')
+
+    with open('tables.json') as data_file:
+        data = json.loads(data_file.read())
+        for item in data:
+            name = item['TableName']
+            try:
+                table_description = client.describe_table(TableName=name)
+                print '%s table already exists' % name
+            except Exception, e:
+                print '%s table does not exists' % name
+
+                table = resource.create_table(**item)
+                # wait for contirmation that the table exists
+                table.meta.client.get_waiter('table_exists').wait(TableName=name)
+                print '%s table is created' % name
+

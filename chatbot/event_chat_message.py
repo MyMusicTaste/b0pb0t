@@ -22,7 +22,6 @@ def send_authorization_request(channel, bot_token):
     attachments = [
         {
             'title': 'Authorization',
-            # 'title_link': 'https://slack.com/oauth/authorize?scope=bot,channels:write,im:write,im:history,reminders:write&state=%s&client_id=%s' % (message_ts, conf.CLIENT_ID)
             'title_link': 'https://slack.com/oauth/authorize?scope=bot,channels:write,im:write,im:history,reminders:write&client_id=%s' % conf.CLIENT_ID
         }
     ]

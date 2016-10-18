@@ -2,10 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84570c68-a688-419b-a071-c85a2585563e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chatbot/command_definition.json" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chatbot/tables.json" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/chatbot/debugTest.py" afterPath="$PROJECT_DIR$/chatbot/resource_setup.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatbot/bopbot_util.py" afterPath="$PROJECT_DIR$/chatbot/bopbot_util.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatbot/debugTest.py" afterPath="$PROJECT_DIR$/chatbot/debugTest.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatbot/event_chat_message.py" afterPath="$PROJECT_DIR$/chatbot/event_chat_message.py" />
     </list>
     <ignored path="Bopbot.iws" />
@@ -22,7 +21,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/Bopbot$bopbot_util.coverage" NAME="bopbot_util Coverage Results" MODIFIED="1475578474540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chatbot" />
     <SUITE FILE_PATH="coverage/Bopbot$poll_timer.coverage" NAME="poll_timer Coverage Results" MODIFIED="1476690352782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chatbot" />
-    <SUITE FILE_PATH="coverage/Bopbot$debugTest.coverage" NAME="debugTest Coverage Results" MODIFIED="1476771790541" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chatbot" />
+    <SUITE FILE_PATH="coverage/Bopbot$debugTest.coverage" NAME="debugTest Coverage Results" MODIFIED="1476785860344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chatbot" />
     <SUITE FILE_PATH="coverage/Bopbot$event_chat_message.coverage" NAME="event_chat_message Coverage Results" MODIFIED="1476689447113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chatbot" />
     <SUITE FILE_PATH="coverage/Bopbot$event_handler.coverage" NAME="event_handler Coverage Results" MODIFIED="1476770632112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chatbot" />
     <SUITE FILE_PATH="coverage/Bopbot$Test.coverage" NAME="Test Coverage Results" MODIFIED="1476769866098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
@@ -81,17 +80,17 @@
             <entry file="file://$PROJECT_DIR$/chatbot/event_chat_message.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="180" column="66" selection-start-line="180" selection-start-column="66" selection-end-line="180" selection-end-column="66" />
+                  <caret line="520" column="34" selection-start-line="520" selection-start-column="34" selection-end-line="520" selection-end-column="34" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="debugTest.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/chatbot/debugTest.py">
+          <file leaf-file-name="resource_setup.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/chatbot/resource_setup.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
+                <state vertical-scroll-proportion="0.15537018">
+                  <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
                   <folding>
                     <element signature="e#23#34#0" expanded="true" />
                     <element signature="e#84#637#0" expanded="false" />
@@ -103,17 +102,27 @@
           <file leaf-file-name="Test.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/archive_file/Test.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-10.0188675">
-                  <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="command_definition.json" pinned="false" current-in-tab="true">
+          <file leaf-file-name="tables.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/chatbot/tables.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="-8.125">
+                  <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="command_definition.json" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/chatbot/command_definition.json">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="1.2085562">
+                <state vertical-scroll-proportion="-135.625">
                   <caret line="217" column="53" selection-start-line="217" selection-start-column="53" selection-end-line="217" selection-end-column="53" />
                   <folding />
                 </state>
@@ -151,8 +160,8 @@
           <file leaf-file-name="conf.py" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/chatbot/conf.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="1.2659019">
-                  <caret line="91" column="1" selection-start-line="91" selection-start-column="1" selection-end-line="91" selection-end-column="1" />
+                <state vertical-scroll-proportion="-0.15745568">
+                  <caret line="45" column="66" selection-start-line="45" selection-start-column="66" selection-end-line="45" selection-end-column="66" />
                   <folding>
                     <element signature="e#23#56#0" expanded="true" />
                   </folding>
@@ -174,7 +183,7 @@
             <entry file="file://$PROJECT_DIR$/chatbot/event_chat_message.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="-28.703703">
-                  <caret line="195" column="0" selection-start-line="195" selection-start-column="0" selection-end-line="195" selection-end-column="0" />
+                  <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
                   <folding>
                     <element signature="e#23#34#0" expanded="true" />
                   </folding>
@@ -214,13 +223,15 @@
         <option value="$PROJECT_DIR$/chatbot/event_receiver.py" />
         <option value="$PROJECT_DIR$/chatbot/poll_timer.py" />
         <option value="$PROJECT_DIR$/chatbot/phrases.json" />
-        <option value="$PROJECT_DIR$/archive_file/Test.py" />
-        <option value="$PROJECT_DIR$/chatbot/debugTest.py" />
-        <option value="$PROJECT_DIR$/chatbot/event_chat_message.py" />
         <option value="$PROJECT_DIR$/chatbot/conf.py" />
         <option value="$PROJECT_DIR$/chatbot/bopbot_util.py" />
         <option value="$PROJECT_DIR$/chatbot/event_handler.py" />
         <option value="$PROJECT_DIR$/chatbot/command_definition.json" />
+        <option value="$PROJECT_DIR$/chatbot/event_chat_message.py" />
+        <option value="$PROJECT_DIR$/chatbot/tables.json" />
+        <option value="$PROJECT_DIR$/chatbot/debugTest.py" />
+        <option value="$PROJECT_DIR$/archive_file/Test.py" />
+        <option value="$PROJECT_DIR$/chatbot/resource_setup.py" />
       </list>
     </option>
   </component>
@@ -705,7 +716,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/chatbot/event_chat_message.py</url>
-          <line>456</line>
+          <line>455</line>
           <option name="timeStamp" value="73" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -715,7 +726,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/chatbot/event_chat_message.py</url>
-          <line>275</line>
+          <line>274</line>
           <option name="timeStamp" value="84" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
@@ -725,7 +736,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/chatbot/event_chat_message.py</url>
-          <line>164</line>
+          <line>163</line>
           <option name="timeStamp" value="94" />
         </line-breakpoint>
       </breakpoints>
@@ -739,46 +750,15 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="95" />
+      <option name="time" value="97" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/chatbot/database_manager.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="0" selection-start-line="55" selection-start-column="0" selection-end-line="55" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/im_receiver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="63" column="39" selection-start-line="63" selection-start-column="22" selection-end-line="63" selection-end-column="39" />
-          <folding>
-            <element signature="e#23#34#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chatbot/yelp_api_scraper.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="43" column="87" selection-start-line="43" selection-start-column="87" selection-end-line="43" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/debugTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="66" column="51" selection-start-line="66" selection-start-column="51" selection-end-line="66" selection-end-column="51" />
-          <folding>
-            <element signature="e#23#34#0" expanded="true" />
-            <element signature="e#84#637#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -885,17 +865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="57" column="78" selection-start-line="57" selection-start-column="78" selection-end-line="57" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/debugTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="11" selection-start-line="64" selection-start-column="11" selection-end-line="64" selection-end-column="11" />
-          <folding>
-            <element signature="e#23#34#0" expanded="true" />
-            <element signature="e#84#637#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1105,33 +1074,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/bopbot_util.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/debugTest.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="25" selection-start-line="60" selection-start-column="25" selection-end-line="60" selection-end-column="25" />
-          <folding>
-            <element signature="e#23#34#0" expanded="true" />
-            <element signature="e#84#637#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/event_chat_message.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="180" column="66" selection-start-line="180" selection-start-column="66" selection-end-line="180" selection-end-column="66" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/bin/lambda_archive.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1145,14 +1087,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/archive_file/Test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-10.0188675">
-          <caret line="83" column="5" selection-start-line="83" selection-start-column="5" selection-end-line="83" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chatbot/event_handler.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1163,10 +1097,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/chatbot/bopbot_util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/chatbot/conf.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2659019">
-          <caret line="91" column="1" selection-start-line="91" selection-start-column="1" selection-end-line="91" selection-end-column="1" />
+        <state vertical-scroll-proportion="-0.15745568">
+          <caret line="45" column="66" selection-start-line="45" selection-start-column="66" selection-end-line="45" selection-end-column="66" />
           <folding>
             <element signature="e#23#56#0" expanded="true" />
           </folding>
@@ -1175,9 +1117,44 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/chatbot/command_definition.json">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.2085562">
+        <state vertical-scroll-proportion="-135.625">
           <caret line="217" column="53" selection-start-line="217" selection-start-column="53" selection-end-line="217" selection-end-column="53" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chatbot/tables.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.125">
+          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/archive_file/Test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chatbot/event_chat_message.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="520" column="34" selection-start-line="520" selection-start-column="34" selection-end-line="520" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chatbot/resource_setup.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.15537018">
+          <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
+          <folding>
+            <element signature="e#23#34#0" expanded="true" />
+            <element signature="e#84#637#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

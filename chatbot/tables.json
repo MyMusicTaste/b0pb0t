@@ -1,0 +1,80 @@
+[
+  {
+    "TableName": "Bot_phrases",
+    "KeySchema": [
+      {"AttributeName": "Key", "KeyType": "HASH"},
+      {"AttributeName": "Phrase", "KeyType": "RANGE"}
+    ],
+    "AttributeDefinitions": [
+      {"AttributeName": "Key", "AttributeType": "S"},
+      {"AttributeName": "Phrase", "AttributeType": "S"}
+    ],
+    "ProvisionedThroughput": {"ReadCapacityUnits": 5, "WriteCapacityUnits": 5}
+  },
+  {
+    "TableName": "Channel_poll",
+    "KeySchema": [
+      {"AttributeName": "Channel_id", "KeyType": "HASH"}
+    ],
+    "AttributeDefinitions": [
+      {"AttributeName": "Channel_id", "AttributeType": "S"}
+    ],
+    "ProvisionedThroughput": {"ReadCapacityUnits": 5, "WriteCapacityUnits": 5}
+  },
+  {
+    "TableName": "Command_Definition",
+    "KeySchema": [
+      {"AttributeName": "Status", "KeyType": "HASH"}
+    ],
+    "AttributeDefinitions": [
+      {"AttributeName": "Status", "AttributeType": "S"}
+    ],
+    "ProvisionedThroughput": {"ReadCapacityUnits": 5, "WriteCapacityUnits": 5}
+  },
+  {
+    "TableName": "Restaurant_list",
+    "KeySchema": [
+      {"AttributeName": "Location", "KeyType": "HASH"},
+      {"AttributeName": "Yelp_id", "KeyType": "RANGE"}
+    ],
+    "AttributeDefinitions": [
+      {"AttributeName": "Location", "AttributeType": "S"},
+      {"AttributeName": "Yelp_id", "AttributeType": "S"}
+    ],
+    "ProvisionedThroughput": {"ReadCapacityUnits": 5, "WriteCapacityUnits": 5}
+  },
+  {
+    "TableName": "SlackTeamBot",
+    "KeySchema": [
+      {"AttributeName": "Team_id", "KeyType": "HASH"},
+      {"AttributeName": "User_id", "KeyType": "RANGE"}
+    ],
+    "AttributeDefinitions": [
+      {"AttributeName": "Team_id", "AttributeType": "S"},
+      {"AttributeName": "User_id", "AttributeType": "S"}
+    ],
+    "ProvisionedThroughput": {"ReadCapacityUnits": 5, "WriteCapacityUnits": 5}
+  },
+  {
+    "TableName": "User_status",
+    "KeySchema": [
+      {"AttributeName": "User_id", "KeyType": "HASH"}
+    ],
+    "AttributeDefinitions": [
+      {"AttributeName": "User_id", "AttributeType": "S"}
+    ],
+    "ProvisionedThroughput": {"ReadCapacityUnits": 5, "WriteCapacityUnits": 5}
+  },
+  {
+    "TableName": "Vote_table",
+    "KeySchema": [
+      {"AttributeName": "Message_ts", "KeyType": "HASH"},
+      {"AttributeName": "User_id", "KeyType": "RANGE"}
+    ],
+    "AttributeDefinitions": [
+      {"AttributeName": "Message_ts", "AttributeType": "S"},
+      {"AttributeName": "User_id", "AttributeType": "S"}
+    ],
+    "ProvisionedThroughput": {"ReadCapacityUnits": 5, "WriteCapacityUnits": 5}
+  }
+]
