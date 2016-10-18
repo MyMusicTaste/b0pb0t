@@ -1,0 +1,228 @@
+[
+  {
+    "status": "wte_commands",
+    "commands": [
+      "whattoeat",
+      "whattoeat?",
+      "bopbot"
+    ]
+  },
+
+  {
+    "status": "tutorial",
+    "command_def": {
+      "wte": {
+        "module": "event_chat_message",
+        "function": "start_what_to_eat_flow",
+        "parameters": ["bot_token", "user_id", "access_token"]
+      },
+      "stop": {
+        "module": "event_chat_message",
+        "function": "send_stop_message_with_key",
+        "parameters": ["key=error_4", "bot_token", "user_id"]
+      },
+      "demo": {
+        "module": "event_chat_message",
+        "function": "send_simple_message_to_slack_with_key",
+        "parameters": ["key=error_6", "bot_token", "user_id"]
+      }
+    },
+    "else": {
+      "module": "event_chat_message",
+      "function": "send_simple_message_to_slack_with_key",
+      "parameters": ["key=error_7", "bot_token", "user_id"]
+    }
+  },
+
+  {
+    "status": "wte_location_input",
+    "command_def": {
+      "wte": {
+        "module": "event_chat_message",
+        "function": "send_simple_message_to_slack_with_key",
+        "parameters": ["key=error_3", "bot_token", "user_id"]
+      },
+      "stop": {
+        "module": "event_chat_message",
+        "function": "send_stop_message_with_key",
+        "parameters": ["key=error_4", "bot_token", "user_id"]
+      },
+      "demo": {
+        "module": "bopbot_tutorial",
+        "function": "send_start_demo_message",
+        "parameters": ["user_id", "bot_token"]
+      },
+      "mymusictaste": {
+        "module": "event_chat_message",
+        "function": "send_random_restaurant_list",
+        "parameters": ["location=mymusictastehq", "user_id", "bot_token"]
+      }
+    },
+    "else": {
+      "module": "event_chat_message",
+      "function": "process_wte_location_input",
+      "parameters": ["bot_token", "user_id", "user_command"]
+    }
+  },
+
+  {
+    "status": "wte_location_choice",
+    "command_def": {
+      "wte": {
+        "module": "event_chat_message",
+        "function": "send_simple_message_to_slack_with_key",
+        "parameters": ["key=error_3", "bot_token", "user_id"]
+      },
+      "stop": {
+        "module": "event_chat_message",
+        "function": "send_stop_message_with_key",
+        "parameters": ["key=error_4", "bot_token", "user_id"]
+      },
+      "demo": {
+        "module": "bopbot_tutorial",
+        "function": "send_start_demo_message",
+        "parameters": ["user_id", "bot_token"]
+      }
+    },
+    "else": {
+      "module": "event_chat_message",
+      "function": "process_wte_location_choice",
+      "parameters": ["bot_token", "user_id", "user_command"]
+    }
+  },
+
+  {
+    "status": "wte",
+    "command_def": {
+      "wte": {
+        "module": "event_chat_message",
+        "function": "send_simple_message_to_slack_with_key",
+        "parameters": ["key=error_3", "bot_token", "user_id"]
+      },
+      "stop": {
+        "module": "event_chat_message",
+        "function": "send_stop_message_with_key",
+        "parameters": ["key=error_4", "bot_token", "user_id"]
+      },
+      "demo": {
+        "module": "bopbot_tutorial",
+        "function": "send_start_demo_message",
+        "parameters": ["user_id", "bot_token"]
+      }
+    },
+    "else": {
+      "module": "event_chat_message",
+      "function": "send_simple_message_to_slack_with_key",
+      "parameters": ["key=error_9", "bot_token", "user_id"]
+    }
+  },
+
+  {
+    "status": "wte_invitation",
+    "command_def": {
+      "wte": {
+        "module": "event_chat_message",
+        "function": "send_simple_message_to_slack_with_key",
+        "parameters": ["key=error_3", "bot_token", "user_id"]
+      },
+      "stop": {
+        "module": "event_chat_message",
+        "function": "send_stop_message_with_key",
+        "parameters": ["key=error_4", "bot_token", "user_id"]
+      },
+      "demo": {
+        "module": "bopbot_tutorial",
+        "function": "send_start_demo_message",
+        "parameters": ["user_id", "bot_token"]
+      }
+    },
+    "else": {
+      "module": "event_chat_message",
+      "function": "process_wte_invitation",
+      "parameters": ["bot_token", "user_id", "user_command", "access_token"]
+    }
+  },
+
+  {
+    "status": "poll",
+    "command_def": {
+      "wte": {
+        "module": "event_chat_message",
+        "function": "start_what_to_eat_flow",
+        "parameters": ["bot_token", "user_id", "access_token"]
+      },
+      "stop": {
+        "module": "event_chat_message",
+        "function": "send_simple_message_to_slack_with_key",
+        "parameters": ["key=error_5", "bot_token", "user_id"]
+      },
+      "demo": {
+        "module": "event_chat_message",
+        "function": "send_simple_message_to_slack_with_key",
+        "parameters": ["key=error_2", "bot_token", "user_id"]
+      }
+    },
+    "else": {
+      "module": "event_chat_message",
+      "function": "send_simple_message_to_slack_with_key",
+      "parameters": ["key=error_1", "bot_token", "user_id"]
+    }
+  },
+
+  {
+    "status": "reminder",
+    "command_def": {
+      "wte": {
+        "module": "event_chat_message",
+        "function": "start_what_to_eat_flow",
+        "parameters": ["bot_token", "user_id", "access_token"]
+      },
+      "stop": {
+        "module": "event_chat_message",
+        "function": "send_stop_message_with_key",
+        "parameters": ["key=reminder_stop", "bot_token", "user_id"]
+      },
+      "demo": {
+        "module": "bopbot_tutorial",
+        "function": "send_start_demo_message",
+        "parameters": ["user_id", "bot_token"]
+      }
+    },
+    "else": {
+      "module": "event_chat_message",
+      "function": "send_reminder_process",
+      "parameters": ["bot_token", "user_id", "user_command", "access_token"]
+    }
+  },
+
+  {
+    "status": "normal",
+    "command_def": {
+      "wte": {
+        "module": "event_chat_message",
+        "function": "start_what_to_eat_flow",
+        "parameters": ["bot_token", "user_id", "access_token"]
+      },
+      "stop": {
+        "module": "event_chat_message",
+        "function": "send_simple_message_to_slack_with_key",
+        "parameters": ["key=error_1", "bot_token", "user_id"]
+      },
+      "demo": {
+        "module": "bopbot_tutorial",
+        "function": "send_start_demo_message",
+        "parameters": ["user_id", "bot_token"]
+      },
+      "hi": {
+        "module": "event_chat_message",
+        "function": "send_simple_message_to_slack_with_key",
+        "parameters": ["key=hi", "bot_token", "user_id"]
+      }
+    },
+    "else": {
+      "module": "event_chat_message",
+      "function": "send_simple_message_to_slack_with_key",
+      "parameters": ["key=error_1", "bot_token", "user_id"]
+    }
+  }
+]

@@ -1,14 +1,7 @@
 # -*- coding: utf8 -*-
 import conf
 import json
-import bopbot_util
-import debugTest
-import sys
-import event_chat_message
-import bopbot_tutorial
 
-import urllib
-import urllib2
 
 def set_tutorial_restaurant():
     restaurant_table = conf.aws_dynamo_db.Table(conf.RESTAURANT_TABLE)
@@ -59,3 +52,25 @@ def set_hq_mymusictaste():
             })
             print response
 
+
+def set_user_command_definition():
+    command_table = conf.aws_dynamo_db.Table(conf.COMMAND_TABLE)
+
+    with open('command_definition.json') as data_file:
+        data = json.loads(data_file.read())
+        for item in data:
+            if item['status'] == 'wte_commands':
+                response = command_table.put_item(Item={
+                    'Status': item['status'],
+                    'Commands': item['commands']
+                })
+            else:
+                response = command_table.put_item(Item={
+                    'Status': item['status'],
+                    'Command_def': item['command_def'],
+                    'Else': item['else']
+                })
+            print response
+
+
+set_user_command_definition()

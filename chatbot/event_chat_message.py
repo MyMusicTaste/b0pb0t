@@ -160,19 +160,32 @@ def chat_event_handler(message):
 
 
 def handler_user_command_with_status(status, user_command, bot_token, user_id, access_token):
-    wte_status = bopbot_util.user_status
-    item = wte_status[status]
-    command_def = item['command_def']
+    command_table = BopBotDatabase(conf.COMMAND_TABLE)
+
+    item = command_table.get_item_from_table(key={'Status': 'wte_commands'})
+    if not item:
+        print 'item does not exists'
+        return
+
+    wte_commands = item['Commands']
+
+    item = command_table.get_item_from_table(key={'Status': status})
+
+    if not item:
+        print 'item does not exists'
+        return
+
+    command_def = item['Command_def']
 
     # 유저의 명령어가 wte command list에 있는지 검사.
-    if len(filter(lambda x: x in user_command, bopbot_util.wte_commands)) > 0:
+    if len(filter(lambda x: x in user_command, wte_commands)) > 0:
         # what to eat command
         user_command = 'wte'
 
     if user_command in command_def:
         item = command_def[user_command]
     else:
-        item = item['else']
+        item = item['Else']
 
     module = item['module']
     if len(module) == 0:
