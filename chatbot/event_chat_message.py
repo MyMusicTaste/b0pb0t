@@ -9,9 +9,7 @@ from database_manager import BopBotDatabase
 from boto3.dynamodb.conditions import Key
 import re
 import time
-import pytz
-from geopy.geocoders import GoogleV3
-import datetime
+
 import sys
 import event_chat_message
 
@@ -21,6 +19,7 @@ def send_authorization_request(channel, bot_token):
 
     attachments = [
         {
+            'fallback': phrase,
             'title': 'Authorization',
             'title_link': 'https://slack.com/oauth/authorize?scope=bot,channels:write,im:write,im:history,reminders:write&client_id=%s' % conf.CLIENT_ID
         }
@@ -66,19 +65,6 @@ def team_join_event_handler(team_id, user_id):
     return bopbot_util.im_open(user_id, bot_token)
 
 
-def start_what_to_eat_flow(bot_token, user_id, access_token=False):
-    if not access_token:
-        return send_authorization_request(channel=user_id, bot_token=bot_token)
-    else:
-        item = {'User_id': user_id, 'Status': 'wte_location_input'}
-        user_table.put_item_to_table(item=item)
-        return send_simple_message_to_slack_with_key(
-            key='location_1',
-            bot_token=bot_token,
-            user_id=user_id
-        )
-
-
 def chat_event_handler(message):
     print 'Chat event handler'
 
@@ -112,10 +98,12 @@ def chat_event_handler(message):
     global team_table
     global user_table
     global restaurant_table
+    global command_table
 
     team_table = BopBotDatabase(table=conf.SLACK_TEAM_TABLE)
     user_table = BopBotDatabase(table=conf.USER_STATUS_TABLE)
     restaurant_table = BopBotDatabase(table=conf.RESTAURANT_TABLE)
+    command_table = BopBotDatabase(conf.COMMAND_TABLE)
 
     key = {'Team_id': team_id, 'User_id': 'Team'}
     item = team_table.get_item_from_table(key=key)
@@ -159,8 +147,6 @@ def chat_event_handler(message):
 
 
 def handler_user_command_with_status(status, user_command, bot_token, user_id, access_token):
-    command_table = BopBotDatabase(conf.COMMAND_TABLE)
-
     item = command_table.get_item_from_table(key={'Status': 'wte_commands'})
     if not item:
         print 'item does not exists'
@@ -204,6 +190,19 @@ def handler_user_command_with_status(status, user_command, bot_token, user_id, a
             kwargs[param] = locals()[param]
 
     return function(**kwargs)
+
+
+def start_what_to_eat_flow(bot_token, user_id, access_token=False):
+    if not access_token:
+        return send_authorization_request(channel=user_id, bot_token=bot_token)
+    else:
+        item = {'User_id': user_id, 'Status': 'wte_location_input'}
+        user_table.put_item_to_table(item=item)
+        return send_simple_message_to_slack_with_key(
+            key='location_1',
+            bot_token=bot_token,
+            user_id=user_id
+        )
 
 
 def send_wte_input_to_yelp(input):
@@ -263,6 +262,10 @@ def process_wte_location_choice(bot_token, user_id, user_command):
 
     except ValueError, e:
         return process_wte_location_input(bot_token=bot_token, user_id=user_id, user_command=user_command)
+    except KeyError, e:
+        return {'ok': False}
+    except Exception, e:
+        return {'ok': False}
 
 
 def send_random_restaurant_list(location, bot_token, user_id, is_yelp=False):
@@ -345,7 +348,7 @@ def process_wte_invitation(bot_token, user_id, user_command, access_token):
             response = send_create_channel_request(access_token)
 
             if not response:
-                return
+                return {'ok': False}
 
             channel_id = response['channel']['id']
             channel_name = response['channel']['name']
@@ -357,7 +360,7 @@ def process_wte_invitation(bot_token, user_id, user_command, access_token):
             print response
             if not response:
                 print 'send poll message failed'
-                return
+                return {'ok': False}
 
             payload = {
                 'time': conf.VOTE_DURATION,
@@ -367,6 +370,7 @@ def process_wte_invitation(bot_token, user_id, user_command, access_token):
                 'user_id': user_id,
                 'bot_token': bot_token
             }
+
             response = conf.aws_sns.publish(
                 TopicArn=conf.aws_sns_timer_arn,
                 Message=json.dumps({'default': json.dumps(payload)}),
@@ -452,14 +456,7 @@ def send_poll_message_request(user_id, bot_token, channel):
     return bopbot_util.send_request_to_slack(url=conf.CHAT_POST_MESSAGE, parameter=payload)
 
 
-def send_reminder_process(bot_token, user_id, user_command, access_token):
-    item = user_table.get_item_from_table(key={'User_id': user_id})
-
-    if 'Channel_id' not in item:
-        return
-
-    channel_id = item['Channel_id']
-
+def get_poll_result_from_channel_table(channel_id):
     try:
         channel_table = BopBotDatabase(table=conf.CHANNEL_POLL_TABLE)
         item = channel_table.get_item_from_table(key={'Channel_id': channel_id})
@@ -468,14 +465,34 @@ def send_reminder_process(bot_token, user_id, user_command, access_token):
         yelp_id = item['Yelp_id']
 
         yelp_item = restaurant_table.get_item_from_table(key={'Location': location, 'Yelp_id': yelp_id})
+
         decision = yelp_item['name'].encode('utf8')
 
         lat = yelp_item['location']['coordinate']['lat']
         lng = yelp_item['location']['coordinate']['lng']
 
+        return {'decision': decision, 'lat': lat, 'lng': lng}
+
     except Exception, e:
         print 'send_reminder_process: %s' % e
+        return None
+
+
+def send_reminder_process(bot_token, user_id, user_command, access_token):
+    item = user_table.get_item_from_table(key={'User_id': user_id})
+
+    if 'Channel_id' not in item:
         return
+
+    channel_id = item['Channel_id']
+
+    poll_result = get_poll_result_from_channel_table(channel_id=channel_id)
+    if poll_result is None:
+        return False
+
+    decision = poll_result['decision']
+    lat = poll_result['lat']
+    lng = poll_result['lng']
 
     members = list()
     vote_table = BopBotDatabase(table=conf.VOTE_TABLE)
@@ -487,31 +504,10 @@ def send_reminder_process(bot_token, user_id, user_command, access_token):
     url = 'https://slack.com/api/reminders.add'
     phrase = bopbot_util.get_phrase('reminder_text')
     payload = {'token': access_token, 'time': user_command, 'user': user_id, 'text': phrase % decision}
-    # response = bopbot_util.send_request(url, payload)
-    # response = response['result']
 
     response = bopbot_util.send_request_to_slack(url=url, parameter=payload)
-    # response = json.loads(response)
 
     if response:
-        timestamp = response['reminder']['time']
-
-        try:
-            utc = pytz.utc
-            date = datetime.datetime.utcfromtimestamp(timestamp).replace(tzinfo=utc)
-
-            google = GoogleV3()
-            google.timeout = 60
-            timezone = google.timezone('%s, %s' % (lat, lng))
-            print 'timezone: %s' % timezone
-            date = timezone.normalize(date.astimezone(timezone))
-            date = date.strftime('%Y-%m-%d %H:%M:%S')
-        except Exception, e:
-            print e
-            date = datetime.datetime.fromtimestamp(timestamp)
-            date = date.strftime('%Y-%m-%d %H:%M:%S')
-            date += ' UTC'
-
         remind_params = list()
         for member in members:
             if member == user_id:
@@ -523,6 +519,9 @@ def send_reminder_process(bot_token, user_id, user_command, access_token):
 
         results = bopbot_util.send_request_with_multiprocessing_pool(4, remind_params)
         print 'Reminder pool results: %s' % results
+
+        timestamp = response['reminder']['time']
+        date = bopbot_util.get_time_from_timezone(timestamp=timestamp, lat=lat, lng=lng)
 
         phrase = bopbot_util.get_phrase('reminder_added')
         payload = bopbot_util.get_dict_for_slack_post_request(token=bot_token, channel=user_id, text=phrase%date)

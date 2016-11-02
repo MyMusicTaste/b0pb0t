@@ -56,7 +56,7 @@ def clicked_simple_demo_start(team_id, user_id, bot_token):
     response = team_table.get_item(Key={'Team_id': team_id, 'User_id': user_id})
     item = response['Item']
 
-    if 'Access_token' in item:
+    if item is not False and 'Access_token' in item:
         payload.update(make_tutorial_restaurant_list('simple_demo_more_options', 'tutorial_3'))
     else:
         phrase = bopbot_util.get_phrase('tutorial_auth')

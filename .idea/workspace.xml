@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="84570c68-a688-419b-a071-c85a2585563e" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/chatbot/tables.json" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/chatbot/debugTest.py" afterPath="$PROJECT_DIR$/chatbot/resource_setup.py" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/bin/Unittest_bot_message.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatbot/bopbot_tutorial.py" afterPath="$PROJECT_DIR$/chatbot/bopbot_tutorial.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatbot/bopbot_util.py" afterPath="$PROJECT_DIR$/chatbot/bopbot_util.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatbot/event_chat_message.py" afterPath="$PROJECT_DIR$/chatbot/event_chat_message.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/chatbot/oauth.py" afterPath="$PROJECT_DIR$/chatbot/oauth.py" />
     </list>
     <ignored path="Bopbot.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -19,16 +21,53 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_process_wte_invitation_no_user.coverage" NAME="Unittest UnittestBotMessage.test_process_wte_invitation_no_user Coverage Results" MODIFIED="1477362947208" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_send_create_channel_request_without_access_token.coverage" NAME="Unittest UnittestBotMessage.test_send_create_channel_request_without_access_token Coverage Results" MODIFIED="1477375893846" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_normal_status__5_.coverage" NAME="Unittest UnittestBotMessage.test_normal_status (5) Coverage Results" MODIFIED="1477286106423" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_process_wte_invitation_create_channel_fail.coverage" NAME="Unittest UnittestBotMessage.test_process_wte_invitation_create_channel_fail Coverage Results" MODIFIED="1477363185054" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$update_lambda_function.coverage" NAME="update_lambda_function Coverage Results" MODIFIED="1475225682308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_send_reminder_process.coverage" NAME="Unittest UnittestBotMessage.test_send_reminder_process Coverage Results" MODIFIED="1477386118448" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_send_invite_members_to_channel.coverage" NAME="Unittest UnittestBotMessage.test_send_invite_members_to_channel Coverage Results" MODIFIED="1477377322656" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_send_reminder_process_without_channel_item.coverage" NAME="Unittest UnittestBotMessage.test_send_reminder_process_without_channel_item Coverage Results" MODIFIED="1477384282493" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_normal_status__3_.coverage" NAME="Unittest UnittestBotMessage.test_normal_status (3) Coverage Results" MODIFIED="1477285553235" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_process_wte_location_choice_command_error.coverage" NAME="Unittest UnittestBotMessage.test_process_wte_location_choice_command_error Coverage Results" MODIFIED="1477302621915" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_send_poll_message_request_.coverage" NAME="Unittest UnittestBotMessage.test_send_poll_message_request_ Coverage Results" MODIFIED="1477378787020" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$debugTest.coverage" NAME="debugTest Coverage Results" MODIFIED="1476785860344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chatbot" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittests_in_UnittestBotTutorial__1_.coverage" NAME="Unittests in UnittestBotTutorial (1) Coverage Results" MODIFIED="1476956755827" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_send_wte_input_to_yelp.coverage" NAME="Unittest UnittestBotMessage.test_send_wte_input_to_yelp Coverage Results" MODIFIED="1477295878164" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittests_in_UnittestBotTutorial.coverage" NAME="Unittests in UnittestBotTutorial Coverage Results" MODIFIED="1476956726220" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_process_wte_invitation_poll_failed.coverage" NAME="Unittest UnittestBotMessage.test_process_wte_invitation_poll_failed Coverage Results" MODIFIED="1477372995605" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_send_create_channel_request_with_exception.coverage" NAME="Unittest UnittestBotMessage.test_send_create_channel_request_with_exception Coverage Results" MODIFIED="1477376126932" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$event_handler.coverage" NAME="event_handler Coverage Results" MODIFIED="1476770632112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chatbot" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_SlackAPITest_test_004_dynamo_test.coverage" NAME="Unittest SlackAPITest.test_004_dynamo_test Coverage Results" MODIFIED="1477282969905" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$lambda_archive.coverage" NAME="lambda_archive Coverage Results" MODIFIED="1476771653746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_start_what_to_eat_flow.coverage" NAME="Unittest UnittestBotMessage.test_start_what_to_eat_flow Coverage Results" MODIFIED="1477294511472" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$bopbot_tutorial.coverage" NAME="bopbot_tutorial Coverage Results" MODIFIED="1475754073474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chatbot" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_normal_status__1_.coverage" NAME="Unittest UnittestBotMessage.test_normal_status (1) Coverage Results" MODIFIED="1477285430488" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittests_in_SlackAPITest.coverage" NAME="Unittests in SlackAPITest Coverage Results" MODIFIED="1477032634154" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
     <SUITE FILE_PATH="coverage/Bopbot$bopbot_util.coverage" NAME="bopbot_util Coverage Results" MODIFIED="1475578474540" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chatbot" />
     <SUITE FILE_PATH="coverage/Bopbot$poll_timer.coverage" NAME="poll_timer Coverage Results" MODIFIED="1476690352782" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chatbot" />
-    <SUITE FILE_PATH="coverage/Bopbot$debugTest.coverage" NAME="debugTest Coverage Results" MODIFIED="1476785860344" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chatbot" />
-    <SUITE FILE_PATH="coverage/Bopbot$event_chat_message.coverage" NAME="event_chat_message Coverage Results" MODIFIED="1476689447113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chatbot" />
-    <SUITE FILE_PATH="coverage/Bopbot$event_handler.coverage" NAME="event_handler Coverage Results" MODIFIED="1476770632112" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chatbot" />
-    <SUITE FILE_PATH="coverage/Bopbot$Test.coverage" NAME="Test Coverage Results" MODIFIED="1476769866098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
-    <SUITE FILE_PATH="coverage/Bopbot$update_lambda_function.coverage" NAME="update_lambda_function Coverage Results" MODIFIED="1475225682308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" />
-    <SUITE FILE_PATH="coverage/Bopbot$lambda_archive.coverage" NAME="lambda_archive Coverage Results" MODIFIED="1476771653746" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/bin" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_send_poll_message_request_without_current_list.coverage" NAME="Unittest UnittestBotMessage.test_send_poll_message_request_without_current_list Coverage Results" MODIFIED="1477378050510" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_normal_status__4_.coverage" NAME="Unittest UnittestBotMessage.test_normal_status (4) Coverage Results" MODIFIED="1477286042133" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_send_random_restaurant_list.coverage" NAME="Unittest UnittestBotMessage.test_send_random_restaurant_list Coverage Results" MODIFIED="1477304696594" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_get_poll_result_from_channel_table.coverage" NAME="Unittest UnittestBotMessage.test_get_poll_result_from_channel_table Coverage Results" MODIFIED="1477387272790" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_process_wte_invitation_no_token.coverage" NAME="Unittest UnittestBotMessage.test_process_wte_invitation_no_token Coverage Results" MODIFIED="1477362960844" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_bot_message.coverage" NAME="Unittest_bot_message Coverage Results" MODIFIED="1477374511729" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittests_in_Unittest_bot_message.coverage" NAME="Unittests in Unittest_bot_message Coverage Results" MODIFIED="1477305653137" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_process_wte_location_choice_user_command_error.coverage" NAME="Unittest UnittestBotMessage.test_process_wte_location_choice_user_command_error Coverage Results" MODIFIED="1477302195698" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
     <SUITE FILE_PATH="coverage/Bopbot$event_receiver.coverage" NAME="event_receiver Coverage Results" MODIFIED="1476689211349" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chatbot" />
-    <SUITE FILE_PATH="coverage/Bopbot$bopbot_tutorial.coverage" NAME="bopbot_tutorial Coverage Results" MODIFIED="1475754073474" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chatbot" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_process_wte_location_input_count_1.coverage" NAME="Unittest UnittestBotMessage.test_process_wte_location_input_count_1 Coverage Results" MODIFIED="1477298414788" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_SlackAPITest_test_002_dynamo_test.coverage" NAME="Unittest SlackAPITest.test_002_dynamo_test Coverage Results" MODIFIED="1477282980998" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_process_wte_location_choice_count0.coverage" NAME="Unittest UnittestBotMessage.test_process_wte_location_choice_count0 Coverage Results" MODIFIED="1477302992941" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$mock_test.coverage" NAME="mock_test Coverage Results" MODIFIED="1477371709114" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_send_channel_generate_message.coverage" NAME="Unittest UnittestBotMessage.test_send_channel_generate_message Coverage Results" MODIFIED="1477377796691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$event_chat_message.coverage" NAME="event_chat_message Coverage Results" MODIFIED="1476689447113" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/chatbot" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittests_in_Test.coverage" NAME="Unittests in Test Coverage Results" MODIFIED="1477278345852" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_normal_status__2_.coverage" NAME="Unittest UnittestBotMessage.test_normal_status (2) Coverage Results" MODIFIED="1477285485095" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Test.coverage" NAME="Test Coverage Results" MODIFIED="1476956750444" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_normal_status.coverage" NAME="Unittest UnittestBotMessage.test_normal_status Coverage Results" MODIFIED="1477285293441" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_make_random_restaurant_list_with_location.coverage" NAME="Unittest UnittestBotMessage.test_make_random_restaurant_list_with_location Coverage Results" MODIFIED="1477305882369" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
+    <SUITE FILE_PATH="coverage/Bopbot$Unittest_UnittestBotMessage_test_process_wte_invitation.coverage" NAME="Unittest UnittestBotMessage.test_process_wte_invitation Coverage Results" MODIFIED="1477375698214" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/archive_file" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -45,7 +84,7 @@
             <entry file="file://$PROJECT_DIR$/bin/lambda_archive.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="87" column="80" selection-start-line="87" selection-start-column="80" selection-end-line="87" selection-end-column="80" />
+                  <caret line="88" column="12" selection-start-line="88" selection-start-column="12" selection-end-line="88" selection-end-column="12" />
                   <folding>
                     <element signature="e#156#282#0" expanded="false" />
                     <element signature="e#318#1379#0" expanded="false" />
@@ -56,12 +95,14 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="oauth.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/chatbot/oauth.py">
+          <file leaf-file-name="database_manager.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/chatbot/database_manager.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-                  <folding />
+                  <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+                  <folding>
+                    <element signature="e#0#11#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -70,30 +111,29 @@
             <entry file="file://$PROJECT_DIR$/chatbot/event_interactive_messages.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="81" column="97" selection-start-line="81" selection-start-column="97" selection-end-line="81" selection-end-column="97" />
+                  <caret line="113" column="67" selection-start-line="113" selection-start-column="67" selection-end-line="113" selection-end-column="67" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="event_chat_message.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/chatbot/event_chat_message.py">
+          <file leaf-file-name="oauth.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/chatbot/oauth.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="520" column="34" selection-start-line="520" selection-start-column="34" selection-end-line="520" selection-end-column="34" />
+                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="22" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="resource_setup.py" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/chatbot/resource_setup.py">
+          <file leaf-file-name="Unittest_bot_message.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/bin/Unittest_bot_message.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.15537018">
-                  <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
+                <state vertical-scroll-proportion="0.16339356">
+                  <caret line="156" column="33" selection-start-line="156" selection-start-column="33" selection-end-line="156" selection-end-column="33" />
                   <folding>
-                    <element signature="e#23#34#0" expanded="true" />
-                    <element signature="e#84#637#0" expanded="false" />
+                    <element signature="e#24#36#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -103,28 +143,10 @@
             <entry file="file://$PROJECT_DIR$/archive_file/Test.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="tables.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/chatbot/tables.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-8.125">
-                  <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="command_definition.json" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/chatbot/command_definition.json">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-135.625">
-                  <caret line="217" column="53" selection-start-line="217" selection-start-column="53" selection-end-line="217" selection-end-column="53" />
-                  <folding />
+                  <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
+                  <folding>
+                    <element signature="e#0#15#0" expanded="true" />
+                  </folding>
                 </state>
               </provider>
             </entry>
@@ -133,23 +155,27 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="event_handler.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/chatbot/event_handler.py">
+          <file leaf-file-name="event_chat_message.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/chatbot/event_chat_message.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+                  <caret line="473" column="0" selection-start-line="473" selection-start-column="0" selection-end-line="473" selection-end-column="0" />
                   <folding>
                     <element signature="e#23#34#0" expanded="true" />
+                    <element signature="e#1026#1224#0" expanded="false" />
+                    <element signature="e#1299#1562#0" expanded="false" />
+                    <element signature="e#1616#1805#0" expanded="false" />
+                    <element signature="e#4547#5682#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="database_manager.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/chatbot/database_manager.py">
+          <file leaf-file-name="mock_test.py" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/archive_file/mock_test.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.0">
-                  <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
+                <state vertical-scroll-proportion="0.25923017">
+                  <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
                   <folding>
                     <element signature="e#0#11#0" expanded="true" />
                   </folding>
@@ -157,14 +183,44 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="conf.py" pinned="false" current-in-tab="true">
+          <file leaf-file-name="bopbot_tutorial.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/chatbot/bopbot_tutorial.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="127" column="91" selection-start-line="127" selection-start-column="55" selection-end-line="127" selection-end-column="91" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="conf.py" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/chatbot/conf.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-0.15745568">
-                  <caret line="45" column="66" selection-start-line="45" selection-start-column="66" selection-end-line="45" selection-end-column="66" />
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="113" column="31" selection-start-line="113" selection-start-column="31" selection-end-line="113" selection-end-column="31" />
                   <folding>
                     <element signature="e#23#56#0" expanded="true" />
                   </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="poll_timer.py" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/chatbot/poll_timer.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="tutorial_restaurant.json" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/chatbot/tutorial_restaurant.json">
+              <provider selected="true" editor-type-id="text-editor">
+                <state vertical-scroll-proportion="0.0">
+                  <caret line="2" column="42" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="42" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -173,19 +229,9 @@
             <entry file="file://$PROJECT_DIR$/chatbot/bopbot_util.py">
               <provider selected="true" editor-type-id="text-editor">
                 <state vertical-scroll-proportion="0.0">
-                  <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="event_chat_message.py" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/chatbot/event_chat_message.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="-28.703703">
-                  <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+                  <caret line="68" column="34" selection-start-line="68" selection-start-column="34" selection-end-line="68" selection-end-column="34" />
                   <folding>
-                    <element signature="e#23#34#0" expanded="true" />
+                    <element signature="e#0#13#0" expanded="true" />
                   </folding>
                 </state>
               </provider>
@@ -217,21 +263,23 @@
         <option value="$PROJECT_DIR$/chatbot/yelp_api_scraper.py" />
         <option value="$PROJECT_DIR$/chatbot/database_manager.py" />
         <option value="$PROJECT_DIR$/bin/lambda_archive.py" />
-        <option value="$PROJECT_DIR$/chatbot/bopbot_tutorial.py" />
         <option value="$PROJECT_DIR$/chatbot/event_interactive_messages.py" />
-        <option value="$PROJECT_DIR$/chatbot/oauth.py" />
         <option value="$PROJECT_DIR$/chatbot/event_receiver.py" />
         <option value="$PROJECT_DIR$/chatbot/poll_timer.py" />
         <option value="$PROJECT_DIR$/chatbot/phrases.json" />
-        <option value="$PROJECT_DIR$/chatbot/conf.py" />
-        <option value="$PROJECT_DIR$/chatbot/bopbot_util.py" />
         <option value="$PROJECT_DIR$/chatbot/event_handler.py" />
         <option value="$PROJECT_DIR$/chatbot/command_definition.json" />
-        <option value="$PROJECT_DIR$/chatbot/event_chat_message.py" />
-        <option value="$PROJECT_DIR$/chatbot/tables.json" />
         <option value="$PROJECT_DIR$/chatbot/debugTest.py" />
-        <option value="$PROJECT_DIR$/archive_file/Test.py" />
         <option value="$PROJECT_DIR$/chatbot/resource_setup.py" />
+        <option value="$PROJECT_DIR$/chatbot/oauth.py" />
+        <option value="$PROJECT_DIR$/chatbot/bopbot_tutorial.py" />
+        <option value="$PROJECT_DIR$/chatbot/tables.json" />
+        <option value="$PROJECT_DIR$/archive_file/Test.py" />
+        <option value="$PROJECT_DIR$/chatbot/conf.py" />
+        <option value="$PROJECT_DIR$/archive_file/mock_test.py" />
+        <option value="$PROJECT_DIR$/chatbot/bopbot_util.py" />
+        <option value="$PROJECT_DIR$/chatbot/event_chat_message.py" />
+        <option value="$PROJECT_DIR$/archive_file/Unittest_bot_message.py" />
       </list>
     </option>
   </component>
@@ -271,7 +319,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -314,6 +361,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="bin" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bopbot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Bopbot" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="archive_file" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -321,12 +382,13 @@
         </subPane>
       </pane>
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../chatbot" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Boxoffice-server" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="SearchEverywhereHistoryKey" value="&#9;FILE&#9;file:///Users/kokonak/Desktop/JJS/Bopbot/chatbot/event_chat_message.py" />
   </component>
@@ -337,85 +399,11 @@
       <recent name="$PROJECT_DIR$/chatbot" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.debugTest">
-    <configuration default="false" name="lambda_archive" type="PythonConfigurationType" factoryName="Python" temporary="true">
+  <component name="RunManager" selected="Python tests.Unittest UnittestBotMessage.test_get_poll_result_from_channel_table">
+    <configuration default="false" name="Unittest UnittestBotMessage.test_send_poll_message_request_without_current_list" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/bin" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Bopbot" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bin/lambda_archive.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="event_handler" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/chatbot" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Bopbot" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/chatbot/event_handler.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="poll_timer" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/chatbot" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Bopbot" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/chatbot/poll_timer.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="debugTest" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/chatbot" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="Bopbot" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/chatbot/debugTest.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <method />
-    </configuration>
-    <configuration default="false" name="Test" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
+      <envs />
       <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/archive_file" />
       <option name="IS_MODULE_SDK" value="true" />
@@ -423,9 +411,108 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <module name="Bopbot" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/archive_file/Test.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bin/Unittest_bot_message.py" />
+      <option name="CLASS_NAME" value="UnittestBotMessage" />
+      <option name="METHOD_NAME" value="test_send_poll_message_request_without_current_list" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest UnittestBotMessage.test_send_poll_message_request_" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/archive_file" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Bopbot" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bin/Unittest_bot_message.py" />
+      <option name="CLASS_NAME" value="UnittestBotMessage" />
+      <option name="METHOD_NAME" value="test_send_poll_message_request_" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest UnittestBotMessage.test_send_reminder_process" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/archive_file" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Bopbot" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bin/Unittest_bot_message.py" />
+      <option name="CLASS_NAME" value="UnittestBotMessage" />
+      <option name="METHOD_NAME" value="test_send_reminder_process" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest UnittestBotMessage.test_send_reminder_process_without_channel_item" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/archive_file" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Bopbot" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bin/Unittest_bot_message.py" />
+      <option name="CLASS_NAME" value="UnittestBotMessage" />
+      <option name="METHOD_NAME" value="test_send_reminder_process_without_channel_item" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
+      <method />
+    </configuration>
+    <configuration default="false" name="Unittest UnittestBotMessage.test_get_poll_result_from_channel_table" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/archive_file" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="Bopbot" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/bin/Unittest_bot_message.py" />
+      <option name="CLASS_NAME" value="UnittestBotMessage" />
+      <option name="METHOD_NAME" value="test_get_poll_result_from_channel_table" />
+      <option name="FOLDER_NAME" value="" />
+      <option name="TEST_TYPE" value="TEST_METHOD" />
+      <option name="PATTERN" value="" />
+      <option name="USE_PATTERN" value="false" />
+      <option name="PUREUNITTEST" value="true" />
+      <option name="PARAMS" value="" />
+      <option name="USE_PARAM" value="false" />
       <method />
     </configuration>
     <configuration default="true" type="DjangoTestsConfigurationType" factoryName="Django tests">
@@ -622,19 +709,19 @@
       <method />
     </configuration>
     <list size="5">
-      <item index="0" class="java.lang.String" itemvalue="Python.lambda_archive" />
-      <item index="1" class="java.lang.String" itemvalue="Python.event_handler" />
-      <item index="2" class="java.lang.String" itemvalue="Python.poll_timer" />
-      <item index="3" class="java.lang.String" itemvalue="Python.debugTest" />
-      <item index="4" class="java.lang.String" itemvalue="Python.Test" />
+      <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest UnittestBotMessage.test_send_poll_message_request_without_current_list" />
+      <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest UnittestBotMessage.test_send_poll_message_request_" />
+      <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest UnittestBotMessage.test_send_reminder_process" />
+      <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest UnittestBotMessage.test_send_reminder_process_without_channel_item" />
+      <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest UnittestBotMessage.test_get_poll_result_from_channel_table" />
     </list>
     <recent_temporary>
       <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="Python.debugTest" />
-        <item index="1" class="java.lang.String" itemvalue="Python.lambda_archive" />
-        <item index="2" class="java.lang.String" itemvalue="Python.event_handler" />
-        <item index="3" class="java.lang.String" itemvalue="Python.Test" />
-        <item index="4" class="java.lang.String" itemvalue="Python.poll_timer" />
+        <item index="0" class="java.lang.String" itemvalue="Python tests.Unittest UnittestBotMessage.test_get_poll_result_from_channel_table" />
+        <item index="1" class="java.lang.String" itemvalue="Python tests.Unittest UnittestBotMessage.test_send_reminder_process" />
+        <item index="2" class="java.lang.String" itemvalue="Python tests.Unittest UnittestBotMessage.test_send_reminder_process_without_channel_item" />
+        <item index="3" class="java.lang.String" itemvalue="Python tests.Unittest UnittestBotMessage.test_send_poll_message_request_" />
+        <item index="4" class="java.lang.String" itemvalue="Python tests.Unittest UnittestBotMessage.test_send_poll_message_request_without_current_list" />
       </list>
     </recent_temporary>
   </component>
@@ -651,28 +738,69 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="Unittest_UnittestBotMessage_test_get_poll_result_from_channel_table - 2016.10.25 at 18h 17m 38s.xml">
+      <configuration name="Unittest UnittestBotMessage.test_get_poll_result_from_channel_table" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_UnittestBotMessage_test_get_poll_result_from_channel_table - 2016.10.25 at 18h 18m 16s.xml">
+      <configuration name="Unittest UnittestBotMessage.test_get_poll_result_from_channel_table" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_UnittestBotMessage_test_get_poll_result_from_channel_table - 2016.10.25 at 18h 19m 48s.xml">
+      <configuration name="Unittest UnittestBotMessage.test_get_poll_result_from_channel_table" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_UnittestBotMessage_test_get_poll_result_from_channel_table - 2016.10.25 at 18h 20m 31s.xml">
+      <configuration name="Unittest UnittestBotMessage.test_get_poll_result_from_channel_table" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_UnittestBotMessage_test_get_poll_result_from_channel_table - 2016.10.25 at 18h 20m 38s.xml">
+      <configuration name="Unittest UnittestBotMessage.test_get_poll_result_from_channel_table" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_UnittestBotMessage_test_get_poll_result_from_channel_table - 2016.10.25 at 18h 21m 07s.xml">
+      <configuration name="Unittest UnittestBotMessage.test_get_poll_result_from_channel_table" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_UnittestBotMessage_test_get_poll_result_from_channel_table - 2016.10.25 at 18h 21m 24s.xml">
+      <configuration name="Unittest UnittestBotMessage.test_get_poll_result_from_channel_table" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_UnittestBotMessage_test_send_reminder_process - 2016.10.25 at 18h 01m 07s.xml">
+      <configuration name="Unittest UnittestBotMessage.test_send_reminder_process" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_UnittestBotMessage_test_send_reminder_process - 2016.10.25 at 18h 01m 56s.xml">
+      <configuration name="Unittest UnittestBotMessage.test_send_reminder_process" configurationId="tests" />
+    </history-entry>
+    <history-entry file="Unittest_UnittestBotMessage_test_send_reminder_process - 2016.10.25 at 18h 17m 27s.xml">
+      <configuration name="Unittest UnittestBotMessage.test_send_reminder_process" configurationId="tests" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
     <frame x="4" y="23" width="2556" height="1417" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12370724" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12688942" sideWeight="0.4916318" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948422" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287144" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289777" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32820907" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948422" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3287144" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2336664" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24135281" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.23325635" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.12609388" sideWeight="0.5083682" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32948422" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26404926" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -715,29 +843,34 @@
           <option name="timeStamp" value="72" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/chatbot/event_chat_message.py</url>
-          <line>455</line>
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/chatbot/event_interactive_messages.py</url>
           <line>95</line>
           <option name="timeStamp" value="76" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/chatbot/event_chat_message.py</url>
-          <line>274</line>
-          <option name="timeStamp" value="84" />
+          <url>file://$PROJECT_DIR$/archive_file/Test.py</url>
+          <line>86</line>
+          <option name="timeStamp" value="102" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
-          <url>file://$PROJECT_DIR$/chatbot/bopbot_util.py</url>
-          <line>183</line>
-          <option name="timeStamp" value="85" />
+          <url>file://$PROJECT_DIR$/archive_file/mock_test.py</url>
+          <line>18</line>
+          <option name="timeStamp" value="131" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="python-line">
           <url>file://$PROJECT_DIR$/chatbot/event_chat_message.py</url>
-          <line>163</line>
-          <option name="timeStamp" value="94" />
+          <line>435</line>
+          <option name="timeStamp" value="135" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/chatbot/event_chat_message.py</url>
+          <line>503</line>
+          <option name="timeStamp" value="136" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="python-line">
+          <url>file://$PROJECT_DIR$/chatbot/event_chat_message.py</url>
+          <line>496</line>
+          <option name="timeStamp" value="137" />
         </line-breakpoint>
       </breakpoints>
       <breakpoints-dialog>
@@ -750,56 +883,18 @@
           </properties>
         </breakpoint>
       </default-breakpoints>
-      <option name="time" value="97" />
+      <option name="time" value="144" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/chatbot/yelp_api_scraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="87" selection-start-line="43" selection-start-column="87" selection-end-line="43" selection-end-column="87" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/conf.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="19" selection-start-line="54" selection-start-column="19" selection-end-line="54" selection-end-column="19" />
-          <folding>
-            <element signature="e#23#56#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/bopbot_tutorial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="137" column="4" selection-start-line="137" selection-start-column="4" selection-end-line="137" selection-end-column="80" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/event_chat_message.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/event_interactive_messages.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chatbot/bopbot_util.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -827,9 +922,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="110" column="52" selection-start-line="110" selection-start-column="52" selection-end-line="110" selection-end-column="52" />
-          <folding>
-            <element signature="e#23#34#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -845,9 +937,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="230" column="77" selection-start-line="230" selection-start-column="77" selection-end-line="230" selection-end-column="77" />
-          <folding>
-            <element signature="e#23#34#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -855,9 +944,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="195" column="47" selection-start-line="195" selection-start-column="47" selection-end-line="195" selection-end-column="47" />
-          <folding>
-            <element signature="e#23#34#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -889,7 +976,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="150" column="0" selection-start-line="150" selection-start-column="0" selection-end-line="150" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#23#34#0" expanded="true" />
+            <element signature="e#1026#1224#0" expanded="false" />
+            <element signature="e#1299#1562#0" expanded="false" />
+            <element signature="e#1616#1805#0" expanded="false" />
+            <element signature="e#4547#5682#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -905,7 +998,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -913,13 +1008,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="50" column="22" selection-start-line="50" selection-start-column="12" selection-end-line="50" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/boto3/session.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5165289">
-          <caret line="187" column="46" selection-start-line="187" selection-start-column="46" selection-end-line="187" selection-end-column="46" />
         </state>
       </provider>
     </entry>
@@ -962,7 +1050,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33299494">
           <caret line="230" column="4" selection-start-line="230" selection-start-column="4" selection-end-line="230" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -980,18 +1067,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/yelp_api_scraper.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="25" selection-start-line="27" selection-start-column="25" selection-end-line="27" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/chatbot/botocore/endpoint.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33280882">
           <caret line="140" column="21" selection-start-line="140" selection-start-column="21" selection-end-line="140" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -999,9 +1078,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.70810384">
           <caret line="60" column="0" selection-start-line="60" selection-start-column="0" selection-end-line="60" selection-end-column="0" />
-          <folding>
-            <element signature="e#23#34#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1009,42 +1085,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.43438914">
           <caret line="32" column="0" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="e#23#34#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/oauth.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="110" column="0" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/bopbot_tutorial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="136" column="53" selection-start-line="136" selection-start-column="53" selection-end-line="136" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/event_interactive_messages.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="81" column="97" selection-start-line="81" selection-start-column="97" selection-end-line="81" selection-end-column="97" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/poll_timer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.48387095">
-          <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
-          <folding>
-            <element signature="e#23#34#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1052,7 +1092,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="2.1176472">
           <caret line="132" column="3" selection-start-line="132" selection-start-column="3" selection-end-line="132" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1060,24 +1099,62 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.32085562">
           <caret line="20" column="6" selection-start-line="20" selection-start-column="6" selection-end-line="20" selection-end-column="6" />
-          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/database_manager.py">
+    <entry file="file://$PROJECT_DIR$/chatbot/yelp_api_scraper.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.85908145">
+          <caret line="134" column="28" selection-start-line="134" selection-start-column="2" selection-end-line="134" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chatbot/command_definition.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7430407">
+          <caret line="217" column="53" selection-start-line="217" selection-start-column="53" selection-end-line="217" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chatbot/resource_setup.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="16" column="23" selection-start-line="16" selection-start-column="23" selection-end-line="16" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#11#0" expanded="true" />
-          </folding>
+          <caret line="71" column="18" selection-start-line="71" selection-start-column="18" selection-end-line="71" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/pythonEnv/lib/python2.7/site-packages/mock/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.030991735">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chatbot/event_handler.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.057747833">
+          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chatbot/tables.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-20.0">
+          <caret line="32" column="4" selection-start-line="32" selection-start-column="4" selection-end-line="32" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/suite.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.79403275">
+          <caret line="113" column="0" selection-start-line="113" selection-start-column="0" selection-end-line="113" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/bin/lambda_archive.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="87" column="80" selection-start-line="87" selection-start-column="80" selection-end-line="87" selection-end-column="80" />
+          <caret line="88" column="12" selection-start-line="88" selection-start-column="12" selection-end-line="88" selection-end-column="12" />
           <folding>
             <element signature="e#156#282#0" expanded="false" />
             <element signature="e#318#1379#0" expanded="false" />
@@ -1087,73 +1164,144 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/event_handler.py">
+    <entry file="file://$PROJECT_DIR$/chatbot/oauth.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="20" selection-start-line="8" selection-start-column="20" selection-end-line="8" selection-end-column="20" />
-          <folding>
-            <element signature="e#23#34#0" expanded="true" />
-          </folding>
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/bopbot_util.py">
+    <entry file="file://$PROJECT_DIR$/chatbot/event_interactive_messages.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="19" column="0" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+          <caret line="113" column="67" selection-start-line="113" selection-start-column="67" selection-end-line="113" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/conf.py">
+    <entry file="file://$PROJECT_DIR$/chatbot/database_manager.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.15745568">
-          <caret line="45" column="66" selection-start-line="45" selection-start-column="66" selection-end-line="45" selection-end-column="66" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding>
-            <element signature="e#23#56#0" expanded="true" />
+            <element signature="e#0#11#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/command_definition.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-135.625">
-          <caret line="217" column="53" selection-start-line="217" selection-start-column="53" selection-end-line="217" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/tables.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.125">
-          <caret line="13" column="3" selection-start-line="13" selection-start-column="3" selection-end-line="13" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/archive_file/Test.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="76" column="36" selection-start-line="76" selection-start-column="36" selection-end-line="76" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#15#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chatbot/bopbot_tutorial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="127" column="91" selection-start-line="127" selection-start-column="55" selection-end-line="127" selection-end-column="91" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chatbot/tutorial_restaurant.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="42" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chatbot/boto3/session.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6239224">
+          <caret line="250" column="34" selection-start-line="250" selection-start-column="34" selection-end-line="250" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chatbot/botocore/client.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="5.1942286">
+          <caret line="427" column="63" selection-start-line="427" selection-start-column="63" selection-end-line="427" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chatbot/conf.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="113" column="31" selection-start-line="113" selection-start-column="31" selection-end-line="113" selection-end-column="31" />
+          <folding>
+            <element signature="e#23#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chatbot/poll_timer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="42" selection-start-line="30" selection-start-column="42" selection-end-line="30" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/.virtualenvs/pythonEnv/lib/python2.7/site-packages/mock/mock.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="1138" column="6" selection-start-line="1138" selection-start-column="6" selection-end-line="1138" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/chatbot/bopbot_util.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="68" column="34" selection-start-line="68" selection-start-column="34" selection-end-line="68" selection-end-column="34" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///usr/local/Cellar/python/2.7.10_2/Frameworks/Python.framework/Versions/2.7/lib/python2.7/unittest/case.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33297414">
+          <caret line="330" column="0" selection-start-line="330" selection-start-column="0" selection-end-line="330" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/chatbot/event_chat_message.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="520" column="34" selection-start-line="520" selection-start-column="34" selection-end-line="520" selection-end-column="34" />
-          <folding />
+          <caret line="473" column="0" selection-start-line="473" selection-start-column="0" selection-end-line="473" selection-end-column="0" />
+          <folding>
+            <element signature="e#23#34#0" expanded="true" />
+            <element signature="e#1026#1224#0" expanded="false" />
+            <element signature="e#1299#1562#0" expanded="false" />
+            <element signature="e#1616#1805#0" expanded="false" />
+            <element signature="e#4547#5682#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/chatbot/resource_setup.py">
+    <entry file="file://$PROJECT_DIR$/archive_file/mock_test.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.15537018">
-          <caret line="46" column="47" selection-start-line="46" selection-start-column="47" selection-end-line="46" selection-end-column="47" />
+        <state vertical-scroll-proportion="0.25923017">
+          <caret line="22" column="23" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="23" />
           <folding>
-            <element signature="e#23#34#0" expanded="true" />
-            <element signature="e#84#637#0" expanded="false" />
+            <element signature="e#0#11#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bin/Unittest_bot_message.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16339356">
+          <caret line="156" column="33" selection-start-line="156" selection-start-column="33" selection-end-line="156" selection-end-column="33" />
+          <folding>
+            <element signature="e#24#36#0" expanded="true" />
           </folding>
         </state>
       </provider>

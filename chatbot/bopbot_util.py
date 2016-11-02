@@ -6,6 +6,9 @@ from boto3.dynamodb.conditions import Key, Attr
 from multiprocessing.dummy import Pool
 from database_manager import BopBotDatabase
 import json
+import pytz
+from geopy.geocoders import GoogleV3
+import datetime
 
 
 interactive_buttons = {
@@ -121,7 +124,7 @@ def send_request(url, parameter=None):
             req = urllib2.Request(url)
 
         response = urllib2.urlopen(req).read()
-
+        print response
         return response
     except Exception, e:
         print e
@@ -219,3 +222,23 @@ def make_archive_payload(bot_token, user_id, channel):
     attachments.append(make_im_button_attachment(callback_id='archive_channel', actions=actions))
     attachments = json.dumps(attachments)
     return get_dict_for_slack_post_request(token=bot_token, channel=user_id, text=phrase, attachments=attachments)
+
+
+def get_time_from_timezone(timestamp, lat, lng):
+    try:
+        utc = pytz.utc
+        date = datetime.datetime.utcfromtimestamp(timestamp).replace(tzinfo=utc)
+
+        google = GoogleV3()
+        google.timeout = 60
+        timezone = google.timezone('%s, %s' % (lat, lng))
+        print 'timezone: %s' % timezone
+        date = timezone.normalize(date.astimezone(timezone))
+        date = date.strftime('%Y-%m-%d %H:%M:%S')
+        return date
+    except Exception, e:
+        print e
+        date = datetime.datetime.fromtimestamp(timestamp)
+        date = date.strftime('%Y-%m-%d %H:%M:%S')
+        date += ' UTC'
+        return date

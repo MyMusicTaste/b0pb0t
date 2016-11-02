@@ -17,7 +17,7 @@ def lambda_handler(event, context):
     response = bopbot_util.send_request_to_slack(url=conf.OAUTH_ACCESS, parameter=payload)
     print response
 
-    if not response:
+    if not response or response['ok'] == False:
         print 'send request failed'
         raise Exception("Bad Request")
 
